@@ -2,7 +2,7 @@
 
 > **A comprehensive R language skill package for [Claude Code](https://github.com/anthropics/claude-code)**
 >
-> Covering 180+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
+> Covering 210+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
 
 **English** | [中文说明](README_CN.md)
 
@@ -25,8 +25,8 @@ We focused on providing **comprehensive coverage**, **practical examples**, and 
 |-------|-------------|-------|
 | Domain | Major R application areas | 15 |
 | Category | Specific sub-domains | 70+ |
-| Package | Individual R packages | 180+ |
-| **Total SKILL.md files** | | **286** |
+| Package | Individual R packages | 210+ |
+| **Total SKILL.md files** | | **326** |
 
 ### 2. Domain Coverage
 | Domain | Description | Packages |
@@ -58,7 +58,7 @@ Database:     DBI, dbplyr, RSQLite, RPostgres, odbc, mongolite, elastic
 
 #### Visualization (30+)
 ```
-Static:       ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader, lattice, rgl, ggalt, ggstatsplot
+Static:       ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader, lattice, rgl, ggalt, ggstatsplot, ggridges, gganimate, ggtext, ggdist
 Interactive:  plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply, dygraphs, ggvis, rbokeh, threejs, wordcloud2
 Animation:    gganimate
 ```
@@ -78,10 +78,10 @@ Anomaly:      AnomalyDetection, anomalize
 
 #### Web Development (20+)
 ```
-Shiny:        shiny, golem, shinyjs, shinydashboard, bslib
+Shiny:        shiny, golem, shinyjs, shinydashboard, bslib, flexdashboard, shinythemes, shinyWidgets
 API:          httr2, httr, plumber, xml2
-Scraping:     rvest, polite
-Reports:      rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex
+Scraping:     rvest, polite, RSelenium
+Reports:      rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex, gt, blogdown, slidify
 ```
 
 #### Statistics (15+)
@@ -89,13 +89,14 @@ Reports:      rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, t
 Bayesian:     brms, rstan, rstanarm
 Finance:      quantmod, xts, zoo, TTR, PerformanceAnalytics
 Optimization: lpSolve, nloptr, ROI
+Time Series:  forecast, tseries, fable, feasts
 ```
 
 #### Spatial Analysis (10+)
 ```
-Vector:       sf, sp
-Raster:       terra, stars
-Mapping:      tmap, mapview, ggmap
+Vector:       sf, sp, rgdal, rgeos, maptools
+Raster:       terra, stars, raster
+Mapping:      tmap, mapview, ggmap, cartography, mapsf
 Analysis:     spatstat
 ```
 
@@ -115,13 +116,14 @@ Topic:        topicmodels, stm, LDAvis
 #### Bioinformatics (5)
 ```
 RNA-seq:      DESeq2, edgeR, limma
-Genomics:     GenomicRanges, Biostrings
+Genomics:     GenomicRanges, Biostrings, Bioconductor, seqinr
+Phylogenetics: ape, phangorn
 ```
 
 #### Development (12)
 ```
 Package:      devtools, usethis, roxygen2, pkgdown, renv, box, lintr, styler
-Testing:      testthat, covr, mockery
+Testing:      testthat, covr, mockery, rcmdcheck
 OOP:          R6
 ```
 
