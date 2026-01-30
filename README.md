@@ -2,7 +2,7 @@
 
 > **A comprehensive R language skill package for [Claude Code](https://github.com/anthropics/claude-code)**
 >
-> Covering 93 R packages across 12 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
+> Covering 120+ R packages across 14 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
 
 **English** | [中文说明](README_CN.md)
 
@@ -23,40 +23,42 @@ We focused on providing **comprehensive coverage**, **practical examples**, and 
 ### 1. Hierarchical Skill Structure
 | Level | Description | Count |
 |-------|-------------|-------|
-| Domain | Major R application areas | 12 |
-| Category | Specific sub-domains | 54 |
-| Package | Individual R packages | 93 |
-| **Total SKILL.md files** | | **208** |
+| Domain | Major R application areas | 14 |
+| Category | Specific sub-domains | 60+ |
+| Package | Individual R packages | 120+ |
+| **Total SKILL.md files** | | **234** |
 
 ### 2. Domain Coverage
 | Domain | Description | Packages |
 |--------|-------------|----------|
-| `r-data` | Data manipulation, formats, databases | 17 |
-| `r-viz` | Static, interactive, animated visualization | 13 |
+| `r-data` | Data manipulation, formats, databases | 24 |
+| `r-viz` | Static, interactive, animated visualization | 21 |
 | `r-ml` | Machine learning frameworks & algorithms | 14 |
-| `r-web` | Shiny, APIs, scraping, reports | 13 |
+| `r-web` | Shiny, APIs, scraping, reports | 17 |
 | `r-spatial` | Vector, raster, mapping | 6 |
 | `r-network` | Graph analysis & visualization | 4 |
 | `r-nlp` | Text mining & NLP | 4 |
-| `r-stats` | Bayesian statistics | 3 |
+| `r-stats` | Bayesian statistics, finance, optimization | 3 |
 | `r-bio` | Bioinformatics (RNA-seq, genomics) | 5 |
-| `r-dev` | Package development & testing | 8 |
+| `r-dev` | Package development & testing | 12 |
 | `r-parallel` | Parallel & high-performance computing | 6 |
+| `r-syntax` | Pipe operators & syntax extensions | 1 |
+| `r-language-api` | Interfaces to Python, JavaScript | 3 |
 | `r-resources` | Learning resources & references | - |
 
 ### 3. Package Coverage
 
-#### Data Processing (17)
+#### Data Processing (24)
 ```
-Manipulation: dplyr, data.table, tidyr, purrr, lubridate, stringr
-Formats:      readr, arrow, readxl, jsonlite, haven, writexl
+Manipulation: dplyr, data.table, tidyr, purrr, lubridate, stringr, broom
+Formats:      readr, arrow, readxl, jsonlite, haven, writexl, vroom, fst, qs, rio, yaml
 Database:     DBI, dbplyr, RSQLite, RPostgres, odbc
 ```
 
-#### Visualization (13)
+#### Visualization (21)
 ```
-Static:       ggplot2, patchwork, scales, ggthemes, cowplot
-Interactive:  plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3
+Static:       ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader
+Interactive:  plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply
 Animation:    gganimate
 ```
 
@@ -70,12 +72,12 @@ Time Series:  prophet, forecast, fable, tsibble
 Deep Learning: keras, torch
 ```
 
-#### Web Development (13)
+#### Web Development (17)
 ```
 Shiny:        shiny, golem, shinyjs, shinydashboard, bslib
 API:          httr2, plumber
 Scraping:     rvest, polite
-Reports:      rmarkdown, quarto, knitr, bookdown
+Reports:      rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex
 ```
 
 #### Spatial Analysis (6)
@@ -107,9 +109,9 @@ RNA-seq:      DESeq2, edgeR, limma
 Genomics:     GenomicRanges, Biostrings
 ```
 
-#### Development (8)
+#### Development (12)
 ```
-Package:      devtools, usethis, roxygen2, pkgdown
+Package:      devtools, usethis, roxygen2, pkgdown, renv, box, lintr, styler
 Testing:      testthat, covr, mockery
 OOP:          R6
 ```
@@ -119,6 +121,17 @@ OOP:          R6
 Local:        future, furrr, foreach
 Distributed:  sparklyr
 C++:          Rcpp, RcppParallel
+```
+
+#### Syntax Extensions (1)
+```
+Pipes:        magrittr
+```
+
+#### Language Interfaces (3)
+```
+Python:       reticulate
+JavaScript:   V8
 ```
 
 ### 4. Reference Documentation
@@ -159,18 +172,20 @@ r-analytics/
 │   └── ...
 ├── scripts/                 # Utility scripts
 │   └── update_packages.R
-└── sub-skills/             # Domain-specific skills (12 domains)
-    ├── r-data/             # Data manipulation (17 packages)
-    ├── r-viz/              # Visualization (13 packages)
+└── sub-skills/             # Domain-specific skills (14 domains)
+    ├── r-data/             # Data manipulation (24 packages)
+    ├── r-viz/              # Visualization (21 packages)
     ├── r-ml/               # Machine learning (14 packages)
-    ├── r-web/              # Web & reports (13 packages)
+    ├── r-web/              # Web & reports (17 packages)
     ├── r-spatial/          # Spatial analysis (6 packages)
     ├── r-network/          # Network analysis (4 packages)
     ├── r-nlp/              # NLP (4 packages)
     ├── r-stats/            # Statistics (3 packages)
     ├── r-bio/              # Bioinformatics (5 packages)
-    ├── r-dev/              # Development (8 packages)
+    ├── r-dev/              # Development (12 packages)
     ├── r-parallel/         # Parallel computing (6 packages)
+    ├── r-syntax/           # Syntax extensions (1 package)
+    ├── r-language-api/     # Language interfaces (3 packages)
     └── r-resources/        # Learning resources
 ```
 

@@ -2,7 +2,7 @@
 
 > **为 [Claude Code](https://github.com/anthropics/claude-code) 打造的综合性 R 语言技能包**
 >
-> 涵盖 12 个领域的 93 个 R 包，包括数据处理、可视化、机器学习、Web 开发、空间分析等。
+> 涵盖 14 个领域的 120+ 个 R 包，包括数据处理、可视化、机器学习、Web 开发、空间分析等。
 
 [English](README.md) | **中文说明**
 
@@ -23,40 +23,42 @@
 ### 1. 层次化技能结构
 | 层级 | 描述 | 数量 |
 |------|------|------|
-| 领域 | R 语言主要应用领域 | 12 |
-| 类别 | 具体子领域 | 54 |
-| 包 | 独立 R 包 | 93 |
-| **SKILL.md 文件总数** | | **208** |
+| 领域 | R 语言主要应用领域 | 14 |
+| 类别 | 具体子领域 | 60+ |
+| 包 | 独立 R 包 | 120+ |
+| **SKILL.md 文件总数** | | **234** |
 
 ### 2. 领域覆盖
 | 领域 | 描述 | 包数量 |
 |------|------|--------|
-| `r-data` | 数据操作、格式、数据库 | 17 |
-| `r-viz` | 静态、交互、动画可视化 | 13 |
+| `r-data` | 数据操作、格式、数据库 | 24 |
+| `r-viz` | 静态、交互、动画可视化 | 21 |
 | `r-ml` | 机器学习框架与算法 | 14 |
-| `r-web` | Shiny、API、爬虫、报告 | 13 |
+| `r-web` | Shiny、API、爬虫、报告 | 17 |
 | `r-spatial` | 矢量、栅格、制图 | 6 |
 | `r-network` | 图分析与可视化 | 4 |
 | `r-nlp` | 文本挖掘与自然语言处理 | 4 |
-| `r-stats` | 贝叶斯统计 | 3 |
+| `r-stats` | 贝叶斯统计、金融、优化 | 3 |
 | `r-bio` | 生物信息学 (RNA-seq, 基因组学) | 5 |
-| `r-dev` | 包开发与测试 | 8 |
+| `r-dev` | 包开发与测试 | 12 |
 | `r-parallel` | 并行与高性能计算 | 6 |
+| `r-syntax` | 管道操作符与语法扩展 | 1 |
+| `r-language-api` | Python、JavaScript 接口 | 3 |
 | `r-resources` | 学习资源与参考 | - |
 
 ### 3. 包覆盖范围
 
-#### 数据处理 (17)
+#### 数据处理 (24)
 ```
-数据操作:   dplyr, data.table, tidyr, purrr, lubridate, stringr
-数据格式:   readr, arrow, readxl, jsonlite, haven, writexl
+数据操作:   dplyr, data.table, tidyr, purrr, lubridate, stringr, broom
+数据格式:   readr, arrow, readxl, jsonlite, haven, writexl, vroom, fst, qs, rio, yaml
 数据库:     DBI, dbplyr, RSQLite, RPostgres, odbc
 ```
 
-#### 可视化 (13)
+#### 可视化 (21)
 ```
-静态图:     ggplot2, patchwork, scales, ggthemes, cowplot
-交互图:     plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3
+静态图:     ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader
+交互图:     plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply
 动画:       gganimate
 ```
 
@@ -70,12 +72,12 @@
 深度学习:   keras, torch
 ```
 
-#### Web 开发 (13)
+#### Web 开发 (17)
 ```
 Shiny:      shiny, golem, shinyjs, shinydashboard, bslib
 API:        httr2, plumber
 爬虫:       rvest, polite
-报告:       rmarkdown, quarto, knitr, bookdown
+报告:       rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex
 ```
 
 #### 空间分析 (6)
@@ -107,9 +109,9 @@ RNA-seq:    DESeq2, edgeR, limma
 基因组学:   GenomicRanges, Biostrings
 ```
 
-#### 开发工具 (8)
+#### 开发工具 (12)
 ```
-包开发:     devtools, usethis, roxygen2, pkgdown
+包开发:     devtools, usethis, roxygen2, pkgdown, renv, box, lintr, styler
 测试:       testthat, covr, mockery
 面向对象:   R6
 ```
@@ -119,6 +121,17 @@ RNA-seq:    DESeq2, edgeR, limma
 本地并行:   future, furrr, foreach
 分布式:     sparklyr
 C++ 加速:   Rcpp, RcppParallel
+```
+
+#### 语法扩展 (1)
+```
+管道:       magrittr
+```
+
+#### 语言接口 (3)
+```
+Python:     reticulate
+JavaScript: V8
 ```
 
 ### 4. 参考文档
@@ -159,18 +172,20 @@ r-analytics/
 │   └── ...
 ├── scripts/                 # 工具脚本
 │   └── update_packages.R
-└── sub-skills/             # 领域专项技能 (12 个领域)
-    ├── r-data/             # 数据处理 (17 个包)
-    ├── r-viz/              # 可视化 (13 个包)
+└── sub-skills/             # 领域专项技能 (14 个领域)
+    ├── r-data/             # 数据处理 (24 个包)
+    ├── r-viz/              # 可视化 (21 个包)
     ├── r-ml/               # 机器学习 (14 个包)
-    ├── r-web/              # Web 与报告 (13 个包)
+    ├── r-web/              # Web 与报告 (17 个包)
     ├── r-spatial/          # 空间分析 (6 个包)
     ├── r-network/          # 网络分析 (4 个包)
     ├── r-nlp/              # 自然语言处理 (4 个包)
     ├── r-stats/            # 统计分析 (3 个包)
     ├── r-bio/              # 生物信息学 (5 个包)
-    ├── r-dev/              # 开发工具 (8 个包)
+    ├── r-dev/              # 开发工具 (12 个包)
     ├── r-parallel/         # 并行计算 (6 个包)
+    ├── r-syntax/           # 语法扩展 (1 个包)
+    ├── r-language-api/     # 语言接口 (3 个包)
     └── r-resources/        # 学习资源
 ```
 
