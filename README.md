@@ -2,7 +2,7 @@
 
 > **A comprehensive R language skill package for [Claude Code](https://github.com/anthropics/claude-code)**
 >
-> Covering 120+ R packages across 14 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
+> Covering 180+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
 
 **English** | [中文说明](README_CN.md)
 
@@ -23,84 +23,93 @@ We focused on providing **comprehensive coverage**, **practical examples**, and 
 ### 1. Hierarchical Skill Structure
 | Level | Description | Count |
 |-------|-------------|-------|
-| Domain | Major R application areas | 14 |
-| Category | Specific sub-domains | 60+ |
-| Package | Individual R packages | 120+ |
-| **Total SKILL.md files** | | **234** |
+| Domain | Major R application areas | 15 |
+| Category | Specific sub-domains | 70+ |
+| Package | Individual R packages | 180+ |
+| **Total SKILL.md files** | | **286** |
 
 ### 2. Domain Coverage
 | Domain | Description | Packages |
 |--------|-------------|----------|
-| `r-data` | Data manipulation, formats, databases | 24 |
-| `r-viz` | Static, interactive, animated visualization | 21 |
-| `r-ml` | Machine learning frameworks & algorithms | 14 |
-| `r-web` | Shiny, APIs, scraping, reports | 17 |
-| `r-spatial` | Vector, raster, mapping | 6 |
-| `r-network` | Graph analysis & visualization | 4 |
-| `r-nlp` | Text mining & NLP | 4 |
-| `r-stats` | Bayesian statistics, finance, optimization | 3 |
+| `r-data` | Data manipulation, formats, databases | 30+ |
+| `r-viz` | Static, interactive, animated visualization | 30+ |
+| `r-ml` | Machine learning frameworks & algorithms | 25+ |
+| `r-web` | Shiny, APIs, scraping, reports | 20+ |
+| `r-spatial` | Vector, raster, mapping | 10+ |
+| `r-network` | Graph analysis & visualization | 8+ |
+| `r-nlp` | Text mining & NLP | 10+ |
+| `r-stats` | Bayesian statistics, finance, optimization | 15+ |
 | `r-bio` | Bioinformatics (RNA-seq, genomics) | 5 |
 | `r-dev` | Package development & testing | 12 |
-| `r-parallel` | Parallel & high-performance computing | 6 |
+| `r-parallel` | Parallel & high-performance computing | 10+ |
 | `r-syntax` | Pipe operators & syntax extensions | 1 |
 | `r-language-api` | Interfaces to Python, JavaScript | 3 |
+| `r-logging` | Application logging frameworks | 3 |
 | `r-resources` | Learning resources & references | - |
 
 ### 3. Package Coverage
 
-#### Data Processing (24)
+#### Data Processing (30+)
 ```
-Manipulation: dplyr, data.table, tidyr, purrr, lubridate, stringr, broom
+Manipulation: dplyr, data.table, tidyr, purrr, lubridate, stringr, broom, reshape2, stringi, DataExplorer, fuzzyjoin
 Formats:      readr, arrow, readxl, jsonlite, haven, writexl, vroom, fst, qs, rio, yaml
-Database:     DBI, dbplyr, RSQLite, RPostgres, odbc
+Database:     DBI, dbplyr, RSQLite, RPostgres, odbc, mongolite, elastic
 ```
 
-#### Visualization (21)
+#### Visualization (30+)
 ```
-Static:       ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader
-Interactive:  plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply
+Static:       ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader, lattice, rgl, ggalt, ggstatsplot
+Interactive:  plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply, dygraphs, ggvis, rbokeh, threejs, wordcloud2
 Animation:    gganimate
 ```
 
-#### Machine Learning (14)
+#### Machine Learning (25+)
 ```
-Frameworks:   tidymodels, caret, mlr3, h2o
-Boosting:     xgboost, lightgbm
-Trees:        ranger
+Frameworks:   tidymodels, caret, mlr3, h2o, lme4, nlme, Boruta
+Boosting:     xgboost, lightgbm, gbm
+Trees:        ranger, randomForest, rpart
 Regularization: glmnet
+SVM:          e1071
 Time Series:  prophet, forecast, fable, tsibble
 Deep Learning: keras, torch
+Survival:     survival, survminer
+Anomaly:      AnomalyDetection, anomalize
 ```
 
-#### Web Development (17)
+#### Web Development (20+)
 ```
 Shiny:        shiny, golem, shinyjs, shinydashboard, bslib
-API:          httr2, plumber
+API:          httr2, httr, plumber, xml2
 Scraping:     rvest, polite
 Reports:      rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex
 ```
 
-#### Spatial Analysis (6)
+#### Statistics (15+)
 ```
-Vector:       sf
-Raster:       terra, stars
-Mapping:      tmap, mapview, ggmap
+Bayesian:     brms, rstan, rstanarm
+Finance:      quantmod, xts, zoo, TTR, PerformanceAnalytics
+Optimization: lpSolve, nloptr, ROI
 ```
 
-#### Network Analysis (4)
+#### Spatial Analysis (10+)
 ```
-Analysis:     igraph, tidygraph, sna
+Vector:       sf, sp
+Raster:       terra, stars
+Mapping:      tmap, mapview, ggmap
+Analysis:     spatstat
+```
+
+#### Network Analysis (8+)
+```
+Analysis:     igraph, tidygraph, sna, network, statnet
 Visualization: ggraph
 ```
 
-#### NLP (4)
+#### NLP (10+)
 ```
-tidytext, quanteda, text2vec, tm
-```
-
-#### Statistics (3)
-```
-Bayesian:     brms, rstan, rstanarm
+Text:         tidytext, quanteda, text2vec, tm
+Sentiment:    syuzhet, sentimentr
+Topic:        topicmodels, stm, LDAvis
 ```
 
 #### Bioinformatics (5)
@@ -116,11 +125,16 @@ Testing:      testthat, covr, mockery
 OOP:          R6
 ```
 
-#### Parallel Computing (6)
+#### Parallel Computing (10+)
 ```
-Local:        future, furrr, foreach
+Local:        future, furrr, foreach, parallel, doParallel
 Distributed:  sparklyr
 C++:          Rcpp, RcppParallel
+```
+
+#### Logging (3)
+```
+futile.logger, log4r, logging
 ```
 
 #### Syntax Extensions (1)
@@ -172,20 +186,21 @@ r-analytics/
 │   └── ...
 ├── scripts/                 # Utility scripts
 │   └── update_packages.R
-└── sub-skills/             # Domain-specific skills (14 domains)
-    ├── r-data/             # Data manipulation (24 packages)
-    ├── r-viz/              # Visualization (21 packages)
-    ├── r-ml/               # Machine learning (14 packages)
-    ├── r-web/              # Web & reports (17 packages)
-    ├── r-spatial/          # Spatial analysis (6 packages)
-    ├── r-network/          # Network analysis (4 packages)
-    ├── r-nlp/              # NLP (4 packages)
-    ├── r-stats/            # Statistics (3 packages)
+└── sub-skills/             # Domain-specific skills (15 domains)
+    ├── r-data/             # Data manipulation (30+ packages)
+    ├── r-viz/              # Visualization (30+ packages)
+    ├── r-ml/               # Machine learning (25+ packages)
+    ├── r-web/              # Web & reports (20+ packages)
+    ├── r-spatial/          # Spatial analysis (10+ packages)
+    ├── r-network/          # Network analysis (8+ packages)
+    ├── r-nlp/              # NLP (10+ packages)
+    ├── r-stats/            # Statistics (15+ packages)
     ├── r-bio/              # Bioinformatics (5 packages)
     ├── r-dev/              # Development (12 packages)
-    ├── r-parallel/         # Parallel computing (6 packages)
+    ├── r-parallel/         # Parallel computing (10+ packages)
     ├── r-syntax/           # Syntax extensions (1 package)
     ├── r-language-api/     # Language interfaces (3 packages)
+    ├── r-logging/          # Logging frameworks (3 packages)
     └── r-resources/        # Learning resources
 ```
 
