@@ -1,125 +1,231 @@
 # R Analytics Skill - Claude Code 技能包
 
-为 [Claude Code](https://github.com/anthropics/claude-code) 打造的综合性 R 语言分析技能包，包含 **93 个包级别技能**，涵盖数据处理、可视化、机器学习、Web 开发、空间分析等领域。
+> **为 [Claude Code](https://github.com/anthropics/claude-code) 打造的综合性 R 语言技能包**
+>
+> 涵盖 12 个领域的 93 个 R 包，包括数据处理、可视化、机器学习、Web 开发、空间分析等。
 
-## 安装
+[English](README.md) | **中文说明**
 
-```bash
-# 克隆到 Claude Code skills 目录
-cd ~/.claude/skills
-git clone https://github.com/LeoLin990405/r-analytics-skill.git r-analytics
+---
+
+## 关于本项目
+
+本技能包由以下成员协作创建：
+- **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - 项目负责人 & 内容整理
+- **Claude** (Anthropic Claude Opus 4.5) - 内容生成 & 组织架构
+
+我们专注于提供 **全面的覆盖范围**、**实用的代码示例** 和 **层次化的组织结构**，以便更好地辅助 R 编程。
+
+---
+
+## 核心特性
+
+### 1. 层次化技能结构
+| 层级 | 描述 | 数量 |
+|------|------|------|
+| 领域 | R 语言主要应用领域 | 12 |
+| 类别 | 具体子领域 | 54 |
+| 包 | 独立 R 包 | 93 |
+| **SKILL.md 文件总数** | | **208** |
+
+### 2. 领域覆盖
+| 领域 | 描述 | 包数量 |
+|------|------|--------|
+| `r-data` | 数据操作、格式、数据库 | 17 |
+| `r-viz` | 静态、交互、动画可视化 | 13 |
+| `r-ml` | 机器学习框架与算法 | 14 |
+| `r-web` | Shiny、API、爬虫、报告 | 13 |
+| `r-spatial` | 矢量、栅格、制图 | 6 |
+| `r-network` | 图分析与可视化 | 4 |
+| `r-nlp` | 文本挖掘与自然语言处理 | 4 |
+| `r-stats` | 贝叶斯统计 | 3 |
+| `r-bio` | 生物信息学 (RNA-seq, 基因组学) | 5 |
+| `r-dev` | 包开发与测试 | 8 |
+| `r-parallel` | 并行与高性能计算 | 6 |
+| `r-resources` | 学习资源与参考 | - |
+
+### 3. 包覆盖范围
+
+#### 数据处理 (17)
+```
+数据操作:   dplyr, data.table, tidyr, purrr, lubridate, stringr
+数据格式:   readr, arrow, readxl, jsonlite, haven, writexl
+数据库:     DBI, dbplyr, RSQLite, RPostgres, odbc
 ```
 
-## 目录结构
-
+#### 可视化 (13)
 ```
-r-analytics/
-├── SKILL.md                 # 主技能文件
-├── references/              # 参考文档
-│   ├── r4ds-*.md           # R for Data Science 笔记
-│   ├── advr-*.md           # Advanced R 笔记
-│   └── ...
-├── scripts/                 # 工具脚本
-└── sub-skills/             # 领域专项技能
-    ├── r-data/             # 数据处理
-    ├── r-viz/              # 可视化
-    ├── r-ml/               # 机器学习
-    ├── r-web/              # Web 与报告
-    ├── r-spatial/          # 空间分析
-    ├── r-network/          # 网络分析
-    ├── r-nlp/              # 自然语言处理
-    ├── r-stats/            # 统计分析
-    ├── r-bio/              # 生物信息学
-    ├── r-dev/              # 开发工具
-    ├── r-parallel/         # 并行计算
-    └── r-resources/        # 学习资源
+静态图:     ggplot2, patchwork, scales, ggthemes, cowplot
+交互图:     plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3
+动画:       gganimate
 ```
 
-## 统计数据
+#### 机器学习 (14)
+```
+框架:       tidymodels, caret, mlr3, h2o
+提升算法:   xgboost, lightgbm
+树模型:     ranger
+正则化:     glmnet
+时间序列:   prophet, forecast, fable, tsibble
+深度学习:   keras, torch
+```
 
-| 层级 | 数量 |
-|------|------|
-| **SKILL.md 文件总数** | 208 |
-| **领域 (Level 1)** | 12 |
-| **类别 (Level 2)** | 54 |
-| **包 (Level 3)** | 93 |
+#### Web 开发 (13)
+```
+Shiny:      shiny, golem, shinyjs, shinydashboard, bslib
+API:        httr2, plumber
+爬虫:       rvest, polite
+报告:       rmarkdown, quarto, knitr, bookdown
+```
 
-## 包覆盖范围
+#### 空间分析 (6)
+```
+矢量:       sf
+栅格:       terra, stars
+制图:       tmap, mapview, ggmap
+```
 
-### 数据处理 (17 个包)
-- **数据操作**: dplyr, data.table, tidyr, purrr, lubridate, stringr
-- **数据格式**: readr, arrow, readxl, jsonlite, haven, writexl
-- **数据库**: DBI, dbplyr, RSQLite, RPostgres, odbc
+#### 网络分析 (4)
+```
+分析:       igraph, tidygraph, sna
+可视化:     ggraph
+```
 
-### 可视化 (13 个包)
-- **静态图**: ggplot2, patchwork, scales, ggthemes, cowplot
-- **交互图**: plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3
-- **动画**: gganimate
+#### 自然语言处理 (4)
+```
+tidytext, quanteda, text2vec, tm
+```
 
-### 机器学习 (14 个包)
-- **框架**: tidymodels, caret, mlr3, h2o
-- **提升算法**: xgboost, lightgbm
-- **树模型**: ranger
-- **正则化**: glmnet
-- **时间序列**: prophet, forecast, fable, tsibble
-- **深度学习**: keras, torch
+#### 统计分析 (3)
+```
+贝叶斯:     brms, rstan, rstanarm
+```
 
-### Web 开发 (13 个包)
-- **Shiny**: shiny, golem, shinyjs, shinydashboard, bslib
-- **API**: httr2, plumber
-- **爬虫**: rvest, polite
-- **报告**: rmarkdown, quarto, knitr, bookdown
+#### 生物信息学 (5)
+```
+RNA-seq:    DESeq2, edgeR, limma
+基因组学:   GenomicRanges, Biostrings
+```
 
-### 空间分析 (6 个包)
-- **矢量**: sf
-- **栅格**: terra, stars
-- **制图**: tmap, mapview, ggmap
+#### 开发工具 (8)
+```
+包开发:     devtools, usethis, roxygen2, pkgdown
+测试:       testthat, covr, mockery
+面向对象:   R6
+```
 
-### 网络分析 (4 个包)
-- **分析**: igraph, tidygraph, sna
-- **可视化**: ggraph
+#### 并行计算 (6)
+```
+本地并行:   future, furrr, foreach
+分布式:     sparklyr
+C++ 加速:   Rcpp, RcppParallel
+```
 
-### 自然语言处理 (4 个包)
-- tidytext, quanteda, text2vec, tm
-
-### 统计分析 (3 个包)
-- **贝叶斯**: brms, rstan, rstanarm
-
-### 生物信息学 (5 个包)
-- **RNA-seq**: DESeq2, edgeR, limma
-- **基因组学**: GenomicRanges, Biostrings
-
-### 开发工具 (8 个包)
-- **包开发**: devtools, usethis, roxygen2, pkgdown
-- **测试**: testthat, covr, mockery
-- **面向对象**: R6
-
-### 并行计算 (6 个包)
-- **本地并行**: future, furrr, foreach
-- **分布式**: sparklyr
-- **C++ 加速**: Rcpp, RcppParallel
-
-## 使用方式
-
-安装后，当你进行以下操作时，Claude Code 会自动使用此技能：
-- 询问 R 编程相关问题
-- 请求使用 R 进行数据分析
-- 需要特定 R 包的帮助
-- 使用 ggplot2/plotly 创建可视化
-- 使用 tidyverse、data.table 或其他 R 包
-
-## 包含的参考资料
-
+### 4. 参考文档
 - **R for Data Science (2e)** - Tidyverse 工作流
 - **Advanced R (2e)** - 深入 R 编程
 - **R Graphics Cookbook** - 可视化食谱
 - **Tidyverse 生态系统** - 核心包指南
 - **Bioconductor** - 生物信息学包
 
+---
+
+## 快速开始
+
+### 安装
+```bash
+# 克隆到 Claude Code skills 目录
+cd ~/.claude/skills
+git clone https://github.com/LeoLin990405/r-analytics-skill.git r-analytics
+```
+
+### 验证安装
+```bash
+ls ~/.claude/skills/r-analytics/SKILL.md
+```
+
+---
+
+## 文件结构
+```
+r-analytics/
+├── SKILL.md                 # 主技能文件 (触发器 & 快速参考)
+├── README.md                # 英文文档
+├── README_CN.md             # 中文文档
+├── references/              # 参考文档 (17 个文件)
+│   ├── r4ds-*.md           # R for Data Science 笔记
+│   ├── advr-*.md           # Advanced R 笔记
+│   ├── graphics-cookbook.md
+│   └── ...
+├── scripts/                 # 工具脚本
+│   └── update_packages.R
+└── sub-skills/             # 领域专项技能 (12 个领域)
+    ├── r-data/             # 数据处理 (17 个包)
+    ├── r-viz/              # 可视化 (13 个包)
+    ├── r-ml/               # 机器学习 (14 个包)
+    ├── r-web/              # Web 与报告 (13 个包)
+    ├── r-spatial/          # 空间分析 (6 个包)
+    ├── r-network/          # 网络分析 (4 个包)
+    ├── r-nlp/              # 自然语言处理 (4 个包)
+    ├── r-stats/            # 统计分析 (3 个包)
+    ├── r-bio/              # 生物信息学 (5 个包)
+    ├── r-dev/              # 开发工具 (8 个包)
+    ├── r-parallel/         # 并行计算 (6 个包)
+    └── r-resources/        # 学习资源
+```
+
+---
+
+## 使用方式
+
+安装后，当你进行以下操作时，Claude Code 会自动使用此技能：
+
+```bash
+# 询问 R 编程问题
+"如何使用 dplyr 过滤数据？"
+
+# 请求数据分析
+"用 R 分析这个 CSV 文件"
+
+# 创建可视化
+"用 ggplot2 画一个散点图"
+
+# 使用特定包
+"教我用 tidymodels 做分类"
+
+# 英文查询同样有效
+"How do I use dplyr to filter data?"
+"Create a ggplot2 scatter plot"
+```
+
+---
+
+## 致谢
+
+本项目的实现离不开以下贡献者：
+
+- **[Hadley Wickham](https://hadley.nz/)** - tidyverse、ggplot2 及众多 R 贡献
+- **[RStudio/Posit](https://posit.co/)** - R 生态系统和工具
+- **[CRAN](https://cran.r-project.org/)** - R 包托管
+- **[Bioconductor](https://bioconductor.org/)** - 生物信息学包
+- **R 社区** - 创建了众多优秀的包
+
+---
+
 ## 许可证
 
-MIT
+MIT 许可证 - 详见 [LICENSE](LICENSE)
+
+---
 
 ## 贡献
 
-欢迎贡献！请随时提交 Issue 或 Pull Request。
+欢迎提交 Issue 和 PR！你可以：
+- 报告错误或不准确之处
+- 建议添加新的包
+- 改进文档
+- 添加更多示例
+
+---
+
+*由 Leo 和 Claude 用 ❤️ 构建*
