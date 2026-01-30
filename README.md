@@ -2,7 +2,7 @@
 
 > **A comprehensive R language skill package for [Claude Code](https://github.com/anthropics/claude-code)**
 >
-> Covering 210+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
+> Covering 230+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
 
 **English** | [中文说明](README_CN.md)
 
@@ -25,15 +25,15 @@ We focused on providing **comprehensive coverage**, **practical examples**, and 
 |-------|-------------|-------|
 | Domain | Major R application areas | 15 |
 | Category | Specific sub-domains | 70+ |
-| Package | Individual R packages | 210+ |
-| **Total SKILL.md files** | | **326** |
+| Package | Individual R packages | 230+ |
+| **Total SKILL.md files** | | **342** |
 
 ### 2. Domain Coverage
 | Domain | Description | Packages |
 |--------|-------------|----------|
 | `r-data` | Data manipulation, formats, databases | 30+ |
 | `r-viz` | Static, interactive, animated visualization | 30+ |
-| `r-ml` | Machine learning frameworks & algorithms | 25+ |
+| `r-ml` | Machine learning frameworks & algorithms | 35+ |
 | `r-web` | Shiny, APIs, scraping, reports | 20+ |
 | `r-spatial` | Vector, raster, mapping | 10+ |
 | `r-network` | Graph analysis & visualization | 8+ |
