@@ -1,275 +1,151 @@
-# R Analytics Skill for Claude Code
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
+  <img src="https://img.shields.io/badge/Packages-250+-green?style=for-the-badge" alt="Packages">
+  <img src="https://img.shields.io/badge/R-Analytics-276DC3?style=for-the-badge" alt="R Analytics">
+</p>
 
-> **A comprehensive R language skill package for [Claude Code](https://github.com/anthropics/claude-code)**
->
-> Covering 250+ R packages across 15 domains including data manipulation, visualization, machine learning, web development, spatial analysis, and more.
+<h1 align="center">R Analytics Skill</h1>
 
-**English** | [中文说明](README_CN.md)
+<p align="center">
+  <strong>Comprehensive R Language Analytics Skill for Claude Code</strong>
+  <br>
+  <em>250+ packages across 15 domains including data manipulation, visualization, machine learning, and more</em>
+</p>
+
+<p align="center">
+  <a href="#-features">Features</a> •
+  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-domains">Domains</a> •
+  <a href="#-packages">Packages</a> •
+  <a href="#-structure">Structure</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude%20Code-CLI-8A2BE2?logo=anthropic&logoColor=white" alt="Claude Code">
+  <img src="https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white" alt="R">
+  <img src="https://img.shields.io/badge/tidyverse-1A162D?logo=tidyverse&logoColor=white" alt="tidyverse">
+  <img src="https://img.shields.io/badge/ggplot2-FC8D62?logo=ggplot2&logoColor=white" alt="ggplot2">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
+
+**English** | [中文](#中文)
 
 ---
 
-## About This Project
+## Overview
 
-This skill package was created collaboratively by:
-- **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project lead & curation
-- **Claude** (Anthropic Claude Opus 4.5) - Content generation & organization
+**R Analytics Skill** provides comprehensive R programming assistance, covering data manipulation, visualization, machine learning, web development, spatial analysis, and more.
 
-We focused on providing **comprehensive coverage**, **practical examples**, and **hierarchical organization** for R programming assistance.
+### Why R Analytics Skill?
+
+| Challenge | Solution |
+|-----------|----------|
+| Scattered R knowledge | **357 SKILL.md files** organized by domain |
+| Package selection | **250+ packages** with recommendations |
+| Learning curve | **Hierarchical structure** from basic to advanced |
+| Code examples | **Practical examples** for each package |
 
 ---
 
-## Key Features
+## Features
 
-### 1. Hierarchical Skill Structure
-| Level | Description | Count |
-|-------|-------------|-------|
-| Domain | Major R application areas | 15 |
-| Category | Specific sub-domains | 70+ |
-| Package | Individual R packages | 250+ |
-| **Total SKILL.md files** | | **357** |
-
-### 2. Domain Coverage
-| Domain | Description | Packages |
-|--------|-------------|----------|
-| `r-data` | Data manipulation, formats, databases, validation | 35+ |
-| `r-viz` | Static, interactive, animated visualization | 35+ |
-| `r-ml` | Machine learning frameworks, algorithms, interpretability | 45+ |
-| `r-web` | Shiny, APIs, scraping, reports | 25+ |
-| `r-spatial` | Vector, raster, mapping, analysis | 15+ |
-| `r-network` | Graph analysis, visualization, dynamic networks | 10+ |
-| `r-nlp` | Text mining, sentiment, topic modeling | 12+ |
-| `r-stats` | Bayesian, finance, optimization, time series | 17+ |
-| `r-bio` | Bioinformatics (RNA-seq, genomics, phylogenetics) | 11+ |
-| `r-dev` | Package development, testing, profiling | 20+ |
-| `r-parallel` | Parallel & high-performance computing | 8+ |
-| `r-syntax` | Pipe operators & syntax extensions | 2 |
-| `r-language-api` | Interfaces to Python, JavaScript, Java, C++ | 5 |
-| `r-logging` | Application logging frameworks | 3 |
-| `r-learning` | Interactive learning tools | 2 |
-
-### 3. Package Coverage
-
-#### Data Processing (35+)
-```
-Manipulation:  dplyr, data.table, tidyr, purrr, lubridate, stringr, broom, reshape2, stringi, DataExplorer, fuzzyjoin, janitor
-Formats:       readr, arrow, readxl, jsonlite, haven, writexl, vroom, fst, qs, rio, yaml, feather, RDS
-Database:      DBI, dbplyr, RSQLite, RPostgres, odbc, mongolite, elastic, RMariaDB, redis
-Validation:    validate, assertr, pointblank
-```
-
-#### Visualization (35+)
-```
-Static:        ggplot2, patchwork, scales, ggthemes, cowplot, gt, ggforce, ggrepel, corrplot, rayshader, lattice, rgl, ggalt, ggstatsplot, ggridges, ggtext, ggdist, ggtree
-Interactive:   plotly, leaflet, DT, highcharter, echarts4r, visNetwork, networkD3, DiagrammeR, formattable, heatmaply, dygraphs, ggvis, rbokeh, threejs, wordcloud2
-Animation:     gganimate, animation
-```
-
-#### Machine Learning (45+)
-```
-Frameworks:    tidymodels, caret, mlr3, h2o, lme4, nlme, Boruta, arules, e1071, kernlab
-Boosting:      xgboost, lightgbm, gbm, catboost
-Trees:         ranger, randomForest, rpart
-Regularization: glmnet, elasticnet
-Deep Learning: keras, torch, tensorflow
-Time Series:   prophet, forecast, fable, tsibble, tseries
-Survival:      survival, survminer
-Anomaly:       AnomalyDetection, anomalize
-Clustering:    cluster, factoextra, mclust, dbscan
-Dimensionality: Rtsne, umap, irlba
-Interpretability: DALEX, iml, lime, vip
-```
-
-#### Web Development (25+)
-```
-Shiny:         shiny, golem, shinyjs, shinydashboard, bslib, flexdashboard, shinythemes, shinyWidgets
-API:           httr2, httr, plumber, curl, xml2
-Scraping:      rvest, polite, RSelenium
-Reports:       rmarkdown, quarto, knitr, bookdown, officer, flextable, targets, tinytex, gt, blogdown, slidify
-```
-
-#### Statistics (17+)
-```
-Bayesian:      brms, rstan, rstanarm, MCMCpack, coda
-Finance:       quantmod, xts, zoo, TTR, PerformanceAnalytics
-Optimization:  lpSolve, nloptr, ROI
-Time Series:   forecast, tseries, fable, feasts
-```
-
-#### Spatial Analysis (15+)
-```
-Vector:        sf, terra, rgdal, rgeos, maptools
-Raster:        terra, stars, raster
-Mapping:       tmap, mapview, ggmap, cartography, mapsf
-Analysis:      sp, spatstat
-```
-
-#### Network Analysis (10+)
-```
-Analysis:      igraph, tidygraph, sna, network, statnet
-Visualization: ggraph
-Dynamic:       networkDynamic, ndtv, tsna
-```
-
-#### NLP (12+)
-```
-Text:          tidytext, quanteda, text2vec, tm, stringdist, hunspell, tokenizers
-Sentiment:     syuzhet, sentimentr
-Topic:         topicmodels, stm, LDAvis
-```
-
-#### Bioinformatics (11+)
-```
-RNA-seq:       DESeq2, edgeR, limma
-Genomics:      GenomicRanges, Biostrings, Bioconductor, seqinr, genetics, pheatmap
-Phylogenetics: ape, phangorn
-```
-
-#### Development (20+)
-```
-Package:       devtools, usethis, roxygen2, pkgdown, renv, box, lintr, styler, pryr, installr, rcmdcheck
-Testing:       testthat, covr, mockery
-OOP:           R6
-Profiling:     bench, profvis, microbenchmark, lobstr
-```
-
-#### Parallel Computing (8+)
-```
-Local:         future, furrr, foreach, parallel, doParallel
-Distributed:   sparklyr
-C++:           Rcpp, RcppParallel
-```
-
-#### Logging (3)
-```
-futile.logger, log4r, logging
-```
-
-#### Syntax Extensions (2)
-```
-Pipes:         magrittr, pipeR
-```
-
-#### Language Interfaces (5)
-```
-Python:        reticulate
-JavaScript:    V8
-Java:          rJava
-C++:           Rcpp, cpp11
-```
-
-#### Learning Tools (2)
-```
-Interactive:   learnr, swirl
-```
-
-### 4. Reference Documentation
-- **R for Data Science (2e)** - Tidyverse workflow
-- **Advanced R (2e)** - Deep R programming
-- **R Graphics Cookbook** - Visualization recipes
-- **Tidyverse Ecosystem** - Core packages guide
-- **Bioconductor** - Bioinformatics packages
+| Feature | Description |
+|---------|-------------|
+| **15 Domains** | Major R application areas |
+| **70+ Categories** | Specific sub-domains |
+| **250+ Packages** | Individual R packages |
+| **357 SKILL.md** | Total skill files |
 
 ---
 
 ## Quick Start
 
 ### Installation
+
 ```bash
-# Clone to your Claude Code skills directory
 cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/r-analytics-skill.git r-analytics
 ```
 
 ### Verify Installation
+
 ```bash
 ls ~/.claude/skills/r-analytics/SKILL.md
 ```
 
 ---
 
-## File Structure
+## Domains
+
+| Domain | Description | Packages |
+|--------|-------------|----------|
+| `r-data` | Data manipulation, formats, databases | 35+ |
+| `r-viz` | Static, interactive, animated visualization | 35+ |
+| `r-ml` | Machine learning frameworks, algorithms | 45+ |
+| `r-web` | Shiny, APIs, scraping, reports | 25+ |
+| `r-spatial` | Vector, raster, mapping, analysis | 15+ |
+| `r-network` | Graph analysis, visualization | 10+ |
+| `r-nlp` | Text mining, sentiment, topic modeling | 12+ |
+| `r-stats` | Bayesian, finance, optimization | 17+ |
+| `r-bio` | Bioinformatics (RNA-seq, genomics) | 11+ |
+| `r-dev` | Package development, testing | 20+ |
+| `r-parallel` | Parallel & high-performance computing | 8+ |
+| `r-syntax` | Pipe operators & syntax extensions | 2 |
+| `r-language-api` | Python, JavaScript, Java, C++ interfaces | 5 |
+| `r-logging` | Application logging frameworks | 3 |
+| `r-learning` | Interactive learning tools | 2 |
+
+---
+
+## Packages
+
+### Data Processing (35+)
+
+```
+Manipulation:  dplyr, data.table, tidyr, purrr, lubridate, stringr
+Formats:       readr, arrow, readxl, jsonlite, haven, vroom
+Database:      DBI, dbplyr, RSQLite, RPostgres, odbc
+Validation:    validate, assertr, pointblank
+```
+
+### Visualization (35+)
+
+```
+Static:        ggplot2, patchwork, scales, ggthemes, cowplot, gt
+Interactive:   plotly, leaflet, DT, highcharter, echarts4r
+Animation:     gganimate, animation
+```
+
+### Machine Learning (45+)
+
+```
+Frameworks:    tidymodels, caret, mlr3, h2o
+Boosting:      xgboost, lightgbm, gbm, catboost
+Deep Learning: keras, torch, tensorflow
+Time Series:   prophet, forecast, fable
+```
+
+---
+
+## Structure
+
 ```
 r-analytics/
-├── SKILL.md                 # Main skill file (triggers & quick reference)
-├── README.md                # English documentation
-├── README_CN.md             # Chinese documentation
-├── references/              # Reference documentation (17 files)
-│   ├── r4ds-*.md           # R for Data Science notes
-│   ├── advr-*.md           # Advanced R notes
-│   ├── graphics-cookbook.md
-│   └── ...
-├── scripts/                 # Utility scripts
-│   └── update_packages.R
-└── sub-skills/             # Domain-specific skills (15 domains)
-    ├── r-data/             # Data manipulation (35+ packages)
-    │   ├── r-data-manipulation/
-    │   ├── r-data-formats/
-    │   ├── r-data-database/
-    │   └── r-data-validation/
-    ├── r-viz/              # Visualization (35+ packages)
-    │   ├── r-viz-static/
-    │   ├── r-viz-interactive/
-    │   └── r-viz-animation/
-    ├── r-ml/               # Machine learning (45+ packages)
-    │   ├── r-ml-frameworks/
-    │   ├── r-ml-boosting/
-    │   ├── r-ml-trees/
-    │   ├── r-ml-regularization/
-    │   ├── r-ml-deeplearning/
-    │   ├── r-ml-timeseries/
-    │   ├── r-ml-survival/
-    │   ├── r-ml-anomaly/
-    │   ├── r-ml-clustering/
-    │   ├── r-ml-dimensionality/
-    │   └── r-ml-interpretability/
-    ├── r-web/              # Web & reports (25+ packages)
-    │   ├── r-web-shiny/
-    │   ├── r-web-api/
-    │   ├── r-web-scraping/
-    │   └── r-web-reports/
-    ├── r-spatial/          # Spatial analysis (15+ packages)
-    │   ├── r-spatial-vector/
-    │   ├── r-spatial-raster/
-    │   ├── r-spatial-mapping/
-    │   └── r-spatial-analysis/
-    ├── r-network/          # Network analysis (10+ packages)
-    │   ├── r-network-analysis/
-    │   ├── r-network-viz/
-    │   └── r-network-dynamic/
-    ├── r-nlp/              # NLP (12+ packages)
-    │   ├── r-nlp-text/
-    │   ├── r-nlp-sentiment/
-    │   └── r-nlp-topic/
-    ├── r-stats/            # Statistics (17+ packages)
-    │   ├── r-stats-bayesian/
-    │   ├── r-stats-finance/
-    │   ├── r-stats-optimization/
-    │   └── r-stats-timeseries/
-    ├── r-bio/              # Bioinformatics (11+ packages)
-    │   ├── r-bio-rnaseq/
-    │   ├── r-bio-genomics/
-    │   └── r-bio-phylo/
-    ├── r-dev/              # Development (20+ packages)
-    │   ├── r-dev-package/
-    │   ├── r-dev-testing/
-    │   ├── r-dev-oop/
-    │   ├── r-dev-docs/
-    │   └── r-dev-profiling/
-    ├── r-parallel/         # Parallel computing (8+ packages)
-    │   ├── r-parallel-local/
-    │   ├── r-parallel-distributed/
-    │   └── r-parallel-cpp/
-    ├── r-syntax/           # Syntax extensions (2 packages)
-    ├── r-language-api/     # Language interfaces (5 packages)
-    ├── r-logging/          # Logging frameworks (3 packages)
-    └── r-learning/         # Learning tools (2 packages)
+├── SKILL.md                 # Main skill file
+├── README.md                # Documentation
+├── references/              # Reference docs (17 files)
+└── sub-skills/              # Domain-specific skills (15 domains)
+    ├── r-data/              # Data manipulation
+    ├── r-viz/               # Visualization
+    ├── r-ml/                # Machine learning
+    ├── r-web/               # Web & reports
+    ├── r-spatial/           # Spatial analysis
+    └── ...
 ```
 
 ---
 
 ## Usage
-
-Once installed, Claude Code will automatically use this skill when you:
 
 ```bash
 # Ask about R programming
@@ -283,40 +159,77 @@ Once installed, Claude Code will automatically use this skill when you:
 
 # Work with specific packages
 "Show me how to use tidymodels for classification"
-
-# Chinese queries also work
-"用 R 语言做数据分析"
-"ggplot2 怎么画柱状图"
 ```
 
 ---
 
-## Acknowledgements
+## 中文
 
-This project was made possible by:
+### 概述
 
-- **[Hadley Wickham](https://hadley.nz/)** - For tidyverse, ggplot2, and countless R contributions
-- **[RStudio/Posit](https://posit.co/)** - For the R ecosystem and tools
-- **[CRAN](https://cran.r-project.org/)** - For hosting R packages
-- **[Bioconductor](https://bioconductor.org/)** - For bioinformatics packages
-- **R Community** - For creating amazing packages
+**R Analytics Skill** 提供全面的 R 编程辅助，涵盖数据处理、可视化、机器学习、Web 开发、空间分析等。
+
+### 领域覆盖
+
+| 领域 | 描述 | 包数量 |
+|------|------|--------|
+| `r-data` | 数据处理、格式、数据库 | 35+ |
+| `r-viz` | 静态、交互、动画可视化 | 35+ |
+| `r-ml` | 机器学习框架、算法 | 45+ |
+| `r-web` | Shiny、API、爬虫、报告 | 25+ |
+| `r-spatial` | 矢量、栅格、制图、分析 | 15+ |
+| `r-network` | 图分析、可视化 | 10+ |
+| `r-nlp` | 文本挖掘、情感分析 | 12+ |
+| `r-stats` | 贝叶斯、金融、优化 | 17+ |
+| `r-bio` | 生物信息学 | 11+ |
+| `r-dev` | 包开发、测试 | 20+ |
+| `r-parallel` | 并行计算 | 8+ |
+
+### 安装
+
+```bash
+cd ~/.claude/skills
+git clone https://github.com/LeoLin990405/r-analytics-skill.git r-analytics
+```
+
+### 使用方法
+
+```bash
+# 询问 R 编程
+"用 dplyr 怎么筛选数据？"
+
+# 请求数据分析
+"用 R 分析这个 CSV 文件"
+
+# 创建可视化
+"用 ggplot2 画散点图"
+```
+
+### 依赖
+
+- R 4.0+
+- Claude Code CLI
 
 ---
+
+## Contributors
+
+- **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead & Curation
+- **Claude** (Anthropic Claude Opus 4.5) - Content Generation & Organization
+
+## Acknowledgements
+
+- **[Hadley Wickham](https://hadley.nz/)** - For tidyverse, ggplot2
+- **[RStudio/Posit](https://posit.co/)** - For the R ecosystem
+- **[CRAN](https://cran.r-project.org/)** - For hosting R packages
+- **[Bioconductor](https://bioconductor.org/)** - For bioinformatics packages
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## Contributing
-
-Issues and PRs are welcome! Please feel free to:
-- Report bugs or inaccuracies
-- Suggest new packages to cover
-- Improve documentation
-- Add more examples
-
----
-
-*Built with ❤️ by Leo and Claude*
+<p align="center">
+  <sub>Built with ❤️ by Leo and Claude</sub>
+</p>
