@@ -1,23 +1,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Modules-15-green?style=for-the-badge" alt="Modules">
-  <img src="https://img.shields.io/badge/GitHub-Repository%20Design-181717?style=for-the-badge" alt="GitHub">
+  <img src="https://img.shields.io/badge/Templates-4-orange?style=for-the-badge" alt="Templates">
 </p>
 
-<h1 align="center">GitHub Repo Design Skill</h1>
+<h1 align="center">Repository Toolkit</h1>
 
 <p align="center">
-  <strong>GitHub Repository Design and README Best Practices Guide</strong>
+  <strong>Complete GitHub Repository Design Toolkit for Claude Code</strong>
   <br>
-  <em>Complete guidance for professional open source project setup</em>
+  <em>15 modules, 4 executable templates — covering repo setup, docs, collaboration, and quality</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-modules">Modules</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-structure">Structure</a>
+  <a href="#modules">Modules</a> •
+  <a href="#templates">Templates</a> •
+  <a href="#recipes">Recipes</a> •
+  <a href="#quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -33,29 +32,65 @@
 
 ## Overview
 
-**GitHub Repo Design Skill** provides comprehensive guidance for designing professional GitHub repositories, including structure, documentation, CI/CD, and community building.
+**Repository Toolkit** is a complete GitHub repository design toolkit organized by project phase. It evolved from a 15-module knowledge base into an actionable workflow system with routing, templates, and project-type recipes.
 
-### Why This Skill?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Messy repo structure | **Best practices** for file organization |
-| Poor README quality | **Templates** and badge guides |
-| No CI/CD setup | **GitHub Actions** workflows |
-| Missing community files | **Templates** for issues, PRs, contributing |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| 15 standalone modules | **5 phase-grouped workflows** |
+| Knowledge-only guides | **Actionable templates included** |
+| Linear difficulty levels | **Phase-based routing** |
+| No quick actions | **Intent-based routing + recipes** |
 
 ---
 
-## Features
+## Modules
 
-| Feature | Description |
-|---------|-------------|
-| **15 Modules** | Comprehensive coverage of repo design |
-| **README Templates** | Professional documentation patterns |
-| **Badge Guides** | Status badges, shields.io integration |
-| **CI/CD Workflows** | GitHub Actions templates |
-| **Security Practices** | Dependabot, CodeQL, secret scanning |
-| **Community Building** | Discussions, sponsors, recognition |
+| # | Phase | Module | What It Covers |
+|---|-------|--------|---------------|
+| 01 | Setup | [structure](modules/01-structure/) | Project directory layout, essential files |
+| 02 | Documentation | [readme](modules/02-readme/) | README design, badges, shields.io, tools |
+| 03 | Setup | [config](modules/03-config/) | LICENSE, CONTRIBUTING, SECURITY, CODEOWNERS |
+| 04 | Collaboration | [templates](modules/04-templates/) | Bug reports, feature requests, PR templates |
+| 05 | Setup | [settings](modules/05-settings/) | Topics, social preview, branch protection |
+| 06 | Quality | [cicd](modules/06-cicd/) | GitHub Actions workflows, CI/CD pipelines |
+| 07 | Advanced | [profile](modules/07-profile/) | GitHub Profile README |
+| 08 | Quality | [security](modules/08-security/) | Dependabot, CodeQL, secret scanning |
+| 09 | Advanced | [monorepo](modules/09-monorepo/) | Monorepo structure and tooling |
+| 10 | Documentation | [docs](modules/10-docs/) | Documentation site integration |
+| 11 | Quality | [versioning](modules/11-versioning/) | SemVer, Conventional Commits, changelogs |
+| 12 | Quality | [quality](modules/12-quality/) | Linting, pre-commit hooks, EditorConfig |
+| 13 | Collaboration | [community](modules/13-community/) | Discussions, contributor recognition, sponsors |
+| 14 | Documentation | [i18n](modules/14-i18n/) | Multi-language README, internationalization |
+| 15 | Documentation | [faq](modules/15-faq/) | Frequently asked questions |
+
+---
+
+## Templates
+
+Ready-to-use templates for common repository tasks:
+
+| Template | Use Case |
+|----------|----------|
+| [new-repo-checklist](templates/new-repo-checklist.md) | Step-by-step checklist for setting up a new GitHub repo |
+| [readme-template](templates/readme-template.md) | Universal README template for any project |
+| [ci-workflow-template](templates/ci-workflow-template.yml) | GitHub Actions CI pipeline (lint, test, build, deploy) |
+| [release-checklist](templates/release-checklist.md) | Release checklist (version bump, changelog, tag, publish) |
+
+---
+
+## Recipes
+
+Module combinations by project type:
+
+| Project Type | Modules | Templates |
+|---|---|---|
+| **Small utility / library** | 01 + 02 + 03 | new-repo-checklist, readme-template |
+| **Open source project** | 01-06 + 08 + 11-13 | All templates |
+| **Enterprise project** | 01-06 + 08 + 11 + 12 | ci-workflow-template, release-checklist |
+| **Documentation-heavy** | 01-03 + 10 + 14 + 15 | readme-template |
+| **Monorepo** | 01-03 + 06 + 09 + 11 + 12 | ci-workflow-template, release-checklist |
 
 ---
 
@@ -68,33 +103,19 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/github-repo-design-skill.git github-repo-design
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/github-repo-design/SKILL.md
+# The toolkit auto-routes based on your request:
+"Set up a new repo"            → Setup modules + new-repo-checklist
+"Create a README"              → readme module + readme-template
+"Add CI/CD"                    → cicd module + ci-workflow-template
+"Prepare a release"            → versioning module + release-checklist
+
+# Or access modules directly:
+"Use the security module"      → 08-security
+"Show monorepo best practices" → 09-monorepo
 ```
-
----
-
-## Modules
-
-| Level | Module | Description |
-|-------|--------|-------------|
-| Basic | 01-structure | Recommended project directory structure |
-| Basic | 02-readme | README design, badges, tools |
-| Basic | 03-config | LICENSE, CONTRIBUTING, SECURITY |
-| Basic | 04-templates | Bug reports, feature requests, PR templates |
-| Basic | 05-settings | Topics, social preview, branch protection |
-| Advanced | 06-cicd | GitHub Actions workflows |
-| Advanced | 07-profile | GitHub Profile README |
-| Advanced | 08-security | Dependabot, CodeQL, secret scanning |
-| Advanced | 09-monorepo | Monorepo structure and tools |
-| Advanced | 10-docs | Documentation site integration |
-| Expert | 11-versioning | SemVer, Conventional Commits |
-| Expert | 12-quality | Linting, Pre-commit, EditorConfig |
-| Expert | 13-community | Discussions, contributor recognition |
-| Expert | 14-i18n | Multi-language README, internationalization |
-| Expert | 15-faq | Frequently asked questions |
 
 ---
 
@@ -102,34 +123,23 @@ ls ~/.claude/skills/github-repo-design/SKILL.md
 
 ```
 github-repo-design/
-├── SKILL.md                    # Main entry point
-├── README.md                   # Repository documentation
-├── LICENSE                     # License file
-└── modules/                    # Module directory
-    ├── 01-structure/           # Repository structure
-    ├── 02-readme/              # README design
-    │   ├── README.md           # Main guide
-    │   ├── badges.md           # Badge configuration
-    │   └── tools.md            # Tool recommendations
-    ├── 03-config/              # Configuration files
-    ├── 04-templates/           # Issue/PR templates
-    └── ...
-```
-
----
-
-## Usage
-
-```bash
-# Get repository design guidance
-/github-repo-design
-
-# Triggers
-- "github repo"
-- "repository design"
-- "readme design"
-- "project structure"
-- "open source project"
+├── SKILL.md                        # Router (entry point)
+├── README.md                       # This file
+├── LICENSE
+├── modules/                        # 15 knowledge modules
+│   ├── 01-structure/
+│   ├── 02-readme/
+│   │   ├── README.md
+│   │   ├── badges.md
+│   │   └── tools.md
+│   ├── 03-config/
+│   ├── ...
+│   └── 15-faq/
+└── templates/                      # Executable templates
+    ├── new-repo-checklist.md
+    ├── readme-template.md
+    ├── ci-workflow-template.yml
+    └── release-checklist.md
 ```
 
 ---
@@ -138,27 +148,26 @@ github-repo-design/
 
 ### 概述
 
-**GitHub Repo Design Skill** 为设计专业的 GitHub 仓库提供全面指导，包括结构、文档、CI/CD 和社区建设。
+**Repository Toolkit** 是一个完整的 GitHub 仓库设计工具集，按项目阶段组织。从 15 个知识模块进化为可执行的工作流系统，包含路由、模板和项目类型配方。
 
 ### 模块
 
-| 级别 | 模块 | 描述 |
-|------|------|------|
-| 基础 | 01-structure | 推荐的项目目录结构 |
-| 基础 | 02-readme | README 设计、徽章、工具 |
-| 基础 | 03-config | LICENSE, CONTRIBUTING, SECURITY |
-| 基础 | 04-templates | Bug 报告、功能请求、PR 模板 |
-| 基础 | 05-settings | Topics, 社交预览图, 分支保护 |
-| 进阶 | 06-cicd | GitHub Actions 工作流 |
-| 进阶 | 07-profile | GitHub Profile README |
-| 进阶 | 08-security | Dependabot, CodeQL, 密钥扫描 |
-| 进阶 | 09-monorepo | Monorepo 结构和工具 |
-| 进阶 | 10-docs | 文档网站集成 |
-| 高级 | 11-versioning | SemVer, Conventional Commits |
-| 高级 | 12-quality | Linting, Pre-commit, EditorConfig |
-| 高级 | 13-community | Discussions, 贡献者认可 |
-| 高级 | 14-i18n | 多语言 README, 文档国际化 |
-| 高级 | 15-faq | 常见问题解答 |
+| 阶段 | 模块 | 覆盖范围 |
+|------|------|---------|
+| 初始化 | 01-structure, 03-config, 05-settings | 目录结构、配置文件、仓库设置 |
+| 文档 | 02-readme, 10-docs, 14-i18n, 15-faq | README、文档站点、国际化、FAQ |
+| 协作 | 04-templates, 13-community | Issue/PR 模板、社区建设 |
+| 质量 | 06-cicd, 08-security, 11-versioning, 12-quality | CI/CD、安全、版本管理、代码质量 |
+| 高级 | 07-profile, 09-monorepo | Profile README、Monorepo |
+
+### 模板
+
+| 模板 | 用途 |
+|------|------|
+| new-repo-checklist | 新仓库搭建检查清单 |
+| readme-template | 通用 README 模板 |
+| ci-workflow-template | GitHub Actions CI 模板 |
+| release-checklist | 发布检查清单 |
 
 ### 安装
 
@@ -167,26 +176,12 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/github-repo-design-skill.git github-repo-design
 ```
 
-### 使用方法
-
-```bash
-# 获取仓库设计指导
-/github-repo-design
-
-# 触发词
-- "github repo"
-- "仓库设计"
-- "readme design"
-- "项目结构"
-- "开源项目"
-```
-
 ---
 
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## License
 

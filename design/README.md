@@ -1,23 +1,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Skills-7-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Design-Creative-E91E63?style=for-the-badge" alt="Design">
+  <img src="https://img.shields.io/badge/Design-Toolkit-E91E63?style=for-the-badge" alt="Design Toolkit">
 </p>
 
-<h1 align="center">Claude Design Skills</h1>
+<h1 align="center">Design Toolkit</h1>
 
 <p align="center">
-  <strong>Design and Creative Toolkit for Claude Code</strong>
+  <strong>Complete Design Toolkit for Claude Code</strong>
   <br>
-  <em>Algorithmic art, visual design, theming, frontend design, and web artifacts</em>
+  <em>4 workflow modules, 7 specialized skills, 3 templates — covering the full design lifecycle</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-examples">Examples</a>
+  <a href="#modules">Modules</a> •
+  <a href="#templates">Templates</a> •
+  <a href="#workflow">Workflow</a> •
+  <a href="#quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -33,30 +32,56 @@
 
 ## Overview
 
-**Claude Design Skills** provides creative and design capabilities, from generative art to frontend UI design.
+**Design Toolkit** is a complete design toolkit organized by workflow phase. It groups 7 specialized design skills into 4 actionable workflow modules with templates, checklists, and a design-system foundation.
 
-### Why Design Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Generic AI aesthetics | **Distinctive design** avoiding AI clichés |
-| No visual creativity | **Algorithmic art** with p5.js |
-| Inconsistent theming | **Theme factory** with 10 presets |
-| Basic UI components | **Frontend design** with modern patterns |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| 7 scattered skills | **4 workflow modules** |
+| Flat directory listing | **Intent-based routing** |
+| No templates | **3 reusable templates** |
+| No design-system guidance | **Design-system module** for cross-skill consistency |
 
 ---
 
-## Features
+## Modules
 
-| Feature | Description |
-|---------|-------------|
-| **Algorithmic Art** | Flow fields, particle systems, seeded randomness |
-| **Canvas Design** | Posters, visual compositions, design philosophy |
-| **Theme Factory** | 10 preset themes, custom theme generation |
-| **Frontend Design** | UI components, layouts, responsive design |
-| **Web Artifacts** | Multi-component React artifacts |
-| **Slack GIFs** | Optimized animated GIFs for Slack |
-| **Brand Guidelines** | Anthropic brand colors and typography |
+| # | Module | Skills | What It Covers |
+|---|--------|--------|---------------|
+| 1 | [design-generative](skills/design-generative/SKILL.md) | 2 | Algorithmic art (p5.js), animated GIFs, motion design |
+| 2 | [design-visual](skills/design-visual/SKILL.md) | 2 | Canvas compositions, posters, brand assets, visual identity |
+| 3 | [design-frontend](skills/design-frontend/SKILL.md) | 3 | Frontend UI, React web artifacts, theming with 10 presets |
+| 4 | [design-system](skills/design-system/SKILL.md) | — | Design tokens, component docs, accessibility, consistency |
+
+---
+
+## Templates
+
+Ready-to-use templates for common design tasks:
+
+| Template | Use Case |
+|----------|----------|
+| [design-brief](templates/design-brief.md) | Define project objectives, audience, constraints, and references |
+| [style-guide](templates/style-guide.md) | Document colors, typography, spacing, and component patterns |
+| [design-review-checklist](templates/design-review-checklist.md) | Review visual hierarchy, consistency, accessibility, performance |
+
+---
+
+## Workflow
+
+Design projects flow through four phases:
+
+```
+Concept → Design → Implement → Polish
+```
+
+| Phase | What Happens | Modules |
+|-------|-------------|---------|
+| **Concept** | Define brief, set constraints, choose tools | design-system |
+| **Design** | Create visuals, apply brand, compose layout | design-visual, design-generative |
+| **Implement** | Build components, apply themes, generate assets | design-frontend, design-generative |
+| **Polish** | Review, ensure consistency, check accessibility | design-system |
 
 ---
 
@@ -69,66 +94,19 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-design-skills.git
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/claude-design-skills/SKILL.md
-```
+# The toolkit auto-routes based on your request:
+"Create generative art"           → design-generative → algorithmic-art
+"Design a poster"                 → design-visual → canvas-design
+"Build a themed UI"               → design-frontend → theme-factory
+"Create a React artifact"         → design-frontend → web-artifacts-builder
+"Make a Slack GIF"                → design-generative → slack-gif-creator
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `algorithmic-art` | `/algorithmic-art` | p5.js generative art |
-| `canvas-design` | `/canvas-design` | Visual art in PNG/PDF |
-| `theme-factory` | `/theme-factory` | Theme styling toolkit |
-| `frontend-design` | `/frontend-design` | Frontend interface design |
-| `web-artifacts-builder` | `/web-artifacts-builder` | Web artifacts construction |
-| `slack-gif-creator` | `/slack-gif-creator` | Slack GIF creation |
-| `brand-guidelines` | `/brand-guidelines` | Anthropic brand guidelines |
-
----
-
-## Examples
-
-### Algorithmic Art
-
-```javascript
-// Flow field with seeded randomness
-function setup() {
-  createCanvas(800, 800);
-  randomSeed(42);
-  noiseSeed(42);
-}
-```
-
-### Theme Factory
-
-| Theme | Colors | Style |
-|-------|--------|-------|
-| Nord | Arctic blues | Minimal |
-| Dracula | Dark purples | Gothic |
-| Catppuccin | Pastel | Soft |
-| Tokyo Night | Neon | Cyberpunk |
-
----
-
-## Usage
-
-```bash
-# Create generative art
-/algorithmic-art
-
-# Design visual art
-/canvas-design
-
-# Apply themes to artifacts
-/theme-factory
-
-# Design UI components
-/frontend-design
+# Or access modules directly:
+"Use the frontend design module"  → design-frontend
+"Set up a design system"          → design-system
 ```
 
 ---
@@ -137,28 +115,24 @@ function setup() {
 
 ### 概述
 
-**Claude Design Skills** 提供创意和设计能力，从生成艺术到前端 UI 设计。
+**Design Toolkit** 是一个完整的设计工具集，按工作流阶段组织。将 7 个专业设计技能整合为 4 个可执行的工作流模块，包含模板、检查清单和设计系统基础。
 
-### 包含的技能
+### 模块
 
-| 技能 | 命令 | 描述 |
-|------|------|------|
-| `algorithmic-art` | `/algorithmic-art` | p5.js 生成艺术 |
-| `canvas-design` | `/canvas-design` | PNG/PDF 视觉艺术设计 |
-| `theme-factory` | `/theme-factory` | 主题样式工具 |
-| `frontend-design` | `/frontend-design` | 前端界面设计 |
-| `web-artifacts-builder` | `/web-artifacts-builder` | Web artifacts 构建 |
-| `slack-gif-creator` | `/slack-gif-creator` | Slack GIF 创建 |
-| `brand-guidelines` | `/brand-guidelines` | Anthropic 品牌指南 |
+| 模块 | 技能数 | 覆盖范围 |
+|------|--------|---------|
+| design-generative | 2 | 算法艺术（p5.js）、动画 GIF、动效设计 |
+| design-visual | 2 | Canvas 构图、海报、品牌资产、视觉识别 |
+| design-frontend | 3 | 前端 UI、React Web Artifacts、主题化 |
+| design-system | — | 设计令牌、组件文档、无障碍、一致性 |
 
-### 功能特性
+### 模板
 
-| 功能 | 描述 |
+| 模板 | 用途 |
 |------|------|
-| **算法艺术** | 流场、粒子系统、种子随机性 |
-| **Canvas 设计** | 海报、视觉构图、设计哲学 |
-| **主题工厂** | 10 个预设主题、自定义主题生成 |
-| **前端设计** | UI 组件、布局、响应式设计 |
+| [design-brief](templates/design-brief.md) | 定义项目目标、受众、约束和参考 |
+| [style-guide](templates/style-guide.md) | 记录颜色、字体、间距和组件规范 |
+| [design-review-checklist](templates/design-review-checklist.md) | 审查视觉层次、一致性、无障碍、性能 |
 
 ### 安装
 
@@ -171,16 +145,16 @@ git clone https://github.com/LeoLin990405/claude-design-skills.git
 
 ```bash
 # 创建生成艺术
-/algorithmic-art
+"Create generative art"           → design-generative → algorithmic-art
 
-# 设计视觉艺术
-/canvas-design
+# 设计海报
+"Design a poster"                 → design-visual → canvas-design
 
-# 为 artifacts 应用主题
-/theme-factory
+# 构建主题化 UI
+"Build a themed UI"               → design-frontend → theme-factory
 
-# 设计 UI 组件
-/frontend-design
+# 创建 React artifact
+"Create a React artifact"         → design-frontend → web-artifacts-builder
 ```
 
 ---
@@ -188,7 +162,7 @@ git clone https://github.com/LeoLin990405/claude-design-skills.git
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## License
 

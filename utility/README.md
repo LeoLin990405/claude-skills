@@ -1,23 +1,21 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Skills-6-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Utility-Tools-607D8B?style=for-the-badge" alt="Utility">
+  <img src="https://img.shields.io/badge/Developer-Toolkit-607D8B?style=for-the-badge" alt="Developer Toolkit">
 </p>
 
-<h1 align="center">Claude Utility Skills</h1>
+<h1 align="center">Developer Toolkit</h1>
 
 <p align="center">
-  <strong>Utility and Specialized Domain Skills for Claude Code</strong>
+  <strong>Complete Developer Toolkit for Claude Code</strong>
   <br>
-  <em>Skill creation, MCP building, documentation, testing, and more</em>
+  <em>6 specialized skills, 3 templates — covering skill creation, MCP building, docs, testing, and more</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-guides">Guides</a>
+  <a href="#skills">Skills</a> •
+  <a href="#templates">Templates</a> •
+  <a href="#quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -33,29 +31,41 @@
 
 ## Overview
 
-**Claude Utility Skills** provides utility tools and specialized domain knowledge for various tasks, from creating new skills to building MCP servers.
+**Developer Toolkit** is a complete developer toolkit organized by domain. It provides 6 specialized skills with actionable workflows, frameworks, and executable templates for common developer tasks.
 
-### Why Utility Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Creating new skills | **Skill Creator** with templates and best practices |
-| Building MCP servers | **MCP Builder** with setup guides |
-| Finding Anthropic docs | **Anthropic Docs** knowledge base |
-| Testing web apps | **Webapp Testing** with Playwright |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| Flat skill list | **Grouped by domain** (Development Tools, Knowledge Base, Communications, Testing, Research) |
+| No routing | **Intent-based routing** to the right skill |
+| No templates | **3 executable templates** (MCP server spec, skill spec, test plan) |
+| Skills only | **Workflow layer** on top of existing skills |
 
 ---
 
-## Features
+## Skills
 
-| Feature | Description |
-|---------|-------------|
-| **Skill Creator** | Templates, best practices, SKILL.md format |
-| **MCP Builder** | Server setup, tool definitions, resources |
-| **Anthropic Docs** | API reference, SDK usage, best practices |
-| **History Notes** | Four-step methodology, YAML, Mermaid |
-| **Internal Comms** | Communication templates |
-| **Webapp Testing** | Playwright-based testing |
+| # | Group | Skill | What It Covers |
+|---|-------|-------|---------------|
+| 1 | Development Tools | [skill-creator](skills/skill-creator/SKILL.md) | Skill creation guide, SKILL.md format, best practices |
+| 2 | Development Tools | [mcp-builder](skills/mcp-builder/SKILL.md) | MCP server creation, FastMCP/TypeScript SDK, tools, resources |
+| 3 | Knowledge Base | [anthropic-docs](skills/anthropic-docs/SKILL.md) | Anthropic documentation, Claude API, model selection, Claude Code |
+| 4 | Communications | [internal-comms](skills/internal-comms/SKILL.md) | Status reports, leadership updates, newsletters, incident reports |
+| 5 | Testing | [webapp-testing](skills/webapp-testing/SKILL.md) | Playwright web app testing, screenshots, browser logs, UI debugging |
+| 6 | Research | [history-note-processor](skills/history-note-processor/SKILL.md) | Four-step deep reading, YAML frontmatter, Mermaid diagrams |
+
+---
+
+## Templates
+
+Ready-to-use templates for common developer tasks:
+
+| Template | Use Case |
+|----------|----------|
+| [mcp-server-spec](templates/mcp-server-spec.md) | Specify an MCP server: tools, resources, prompts, auth, deployment |
+| [skill-spec](templates/skill-spec.md) | Specify a new skill: name, triggers, workflow, resources, testing |
+| [test-plan](templates/test-plan.md) | Plan web app testing: scenarios, expected results, environment setup |
 
 ---
 
@@ -68,84 +78,19 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-utility-skills.git
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/claude-utility-skills/SKILL.md
-```
+# The toolkit auto-routes based on your request:
+"Create a new skill"              -> skill-creator + skill-spec template
+"Build an MCP server"             -> mcp-builder + mcp-server-spec template
+"Test my web app"                 -> webapp-testing + test-plan template
+"Write a status report"           -> internal-comms
+"Look up Anthropic API docs"      -> anthropic-docs
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `skill-creator` | `/skill-creator` | Guide for creating skills |
-| `mcp-builder` | `/mcp-builder` | MCP server creation guide |
-| `anthropic-docs` | `/anthropic-docs` | Anthropic documentation |
-| `history-note-processor` | `/history-note-processor` | History note processing |
-| `internal-comms` | `/internal-comms` | Internal communications |
-| `webapp-testing` | `/webapp-testing` | Web application testing |
-
----
-
-## Guides
-
-### Skill Creator
-
-```yaml
-# SKILL.md format
----
-name: my-skill
-description: Brief description
-triggers:
-  - keyword1
-  - keyword2
----
-# Instructions here...
-```
-
-### MCP Builder
-
-```python
-# FastMCP server example
-from fastmcp import FastMCP
-
-mcp = FastMCP("my-server")
-
-@mcp.tool()
-def my_tool(param: str) -> str:
-    return f"Result: {param}"
-```
-
-### Webapp Testing
-
-```python
-# Playwright testing
-from playwright.sync_api import sync_playwright
-
-with sync_playwright() as p:
-    browser = p.chromium.launch()
-    page = browser.new_page()
-    page.goto("http://localhost:3000")
-```
-
----
-
-## Usage
-
-```bash
-# Create new skills
-/skill-creator
-
-# Build MCP servers
-/mcp-builder
-
-# Access Anthropic docs
-/anthropic-docs
-
-# Test web applications
-/webapp-testing
+# Or access skills directly:
+"Use the mcp-builder skill"       -> mcp-builder
+"Show me the test plan template"  -> templates/test-plan
 ```
 
 ---
@@ -154,27 +99,26 @@ with sync_playwright() as p:
 
 ### 概述
 
-**Claude Utility Skills** 提供实用工具和各种任务的专业领域知识，从创建新技能到构建 MCP 服务器。
+**Developer Toolkit** 是一个完整的开发者工具集，按领域组织。提供 6 个专业技能和 3 个可执行模板，覆盖技能创建、MCP 服务器构建、文档查询、测试等常见开发任务。
 
-### 包含的技能
+### 技能
 
-| 技能 | 命令 | 描述 |
-|------|------|------|
-| `skill-creator` | `/skill-creator` | 技能创建指南 |
-| `mcp-builder` | `/mcp-builder` | MCP 服务器创建指南 |
-| `anthropic-docs` | `/anthropic-docs` | Anthropic 文档知识库 |
-| `history-note-processor` | `/history-note-processor` | 历史笔记处理 |
-| `internal-comms` | `/internal-comms` | 内部通讯模板 |
-| `webapp-testing` | `/webapp-testing` | Web 应用测试 |
+| 分组 | 技能 | 覆盖范围 |
+|------|------|---------|
+| 开发工具 | skill-creator | 技能创建指南、SKILL.md 格式、最佳实践 |
+| 开发工具 | mcp-builder | MCP 服务器创建、FastMCP/TypeScript SDK |
+| 知识库 | anthropic-docs | Anthropic 文档、Claude API、模型选择 |
+| 通讯 | internal-comms | 状态报告、领导更新、通讯、事件报告 |
+| 测试 | webapp-testing | Playwright Web 应用测试、截图、浏览器日志 |
+| 研究 | history-note-processor | 四步深度阅读法、YAML、Mermaid 图表 |
 
-### 功能特性
+### 模板
 
-| 功能 | 描述 |
+| 模板 | 用途 |
 |------|------|
-| **技能创建器** | 模板、最佳实践、SKILL.md 格式 |
-| **MCP 构建器** | 服务器设置、工具定义、资源处理 |
-| **Anthropic 文档** | API 参考、SDK 用法、最佳实践 |
-| **历史笔记** | 四步方法论、YAML frontmatter、Mermaid 图表 |
+| mcp-server-spec | MCP 服务器规格：工具、资源、认证、部署 |
+| skill-spec | 技能规格：名称、触发器、工作流、测试 |
+| test-plan | 测试计划：场景、预期结果、环境配置 |
 
 ### 安装
 
@@ -183,28 +127,12 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-utility-skills.git
 ```
 
-### 使用方法
-
-```bash
-# 创建新技能
-/skill-creator
-
-# 构建 MCP 服务器
-/mcp-builder
-
-# 访问 Anthropic 文档
-/anthropic-docs
-
-# 测试 Web 应用
-/webapp-testing
-```
-
 ---
 
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## License
 

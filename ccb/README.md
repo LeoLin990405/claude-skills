@@ -1,23 +1,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Skills-14-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Multi--AI-Collaboration-orange?style=for-the-badge" alt="Multi-AI">
+  <img src="https://img.shields.io/badge/Multi--AI-Coordination-orange?style=for-the-badge" alt="Multi-AI Coordination">
 </p>
 
-<h1 align="center">Claude CCB Skills</h1>
+<h1 align="center">Multi-AI Coordination Toolkit</h1>
 
 <p align="center">
-  <strong>Multi-AI Collaboration Toolkit for Claude Code</strong>
+  <strong>Route tasks to 9 AI providers, orchestrate parallel workflows, synthesize results</strong>
   <br>
-  <em>Async delegation, provider management, and distributed AI workflows</em>
+  <em>14 skills, 4 orchestration patterns, 3 executable templates</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-requirements">Requirements</a>
+  <a href="#modules">Modules</a> •
+  <a href="#templates">Templates</a> •
+  <a href="#orchestration-patterns">Patterns</a> •
+  <a href="#quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -32,29 +31,74 @@
 
 ## Overview
 
-**Claude CCB Skills** is a multi-AI collaboration toolkit that enables Claude Code to delegate tasks to other AI assistants (Codex, Gemini, OpenCode, iFlow, Kimi, Qwen, DeepSeek, Droid) running in separate terminal sessions.
+**Multi-AI Coordination Toolkit** enables Claude Code to delegate tasks to 9 AI providers running in separate terminal sessions. Beyond simple delegation, it provides orchestration patterns and templates for parallel fan-out, consensus voting, sequential pipelines, and specialist routing.
 
-### Why CCB Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Single AI limitations | **Multi-AI collaboration** for diverse perspectives |
-| Synchronous blocking | **Async delegation** - continue working while waiting |
-| Manual provider switching | **Unified commands** - consistent `*ask` / `*ping` interface |
-| No visibility into AI status | **Provider monitoring** - health checks and connectivity |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| Flat list of 14 skills | **Organized by function**: delegation, monitoring, workflows |
+| No orchestration guidance | **4 orchestration patterns** with step-by-step instructions |
+| No templates | **3 executable templates** for common multi-AI workflows |
+| Skills-only | **Router SKILL.md** auto-routes based on user intent |
 
 ---
 
-## Features
+## Modules
 
-| Feature | Description |
+### Delegation (9 providers)
+
+| Provider | Command | Best For |
+|----------|---------|----------|
+| [Codex](skills/cask/SKILL.md) | `/cask <msg>` | Code generation, refactoring, PR review |
+| [Gemini](skills/gask/SKILL.md) | `/gask <msg>` | Long-context analysis, research, multimodal |
+| [OpenCode](skills/oask/SKILL.md) | `/oask <msg>` | Code analysis, debugging, architecture |
+| [DeepSeek](skills/dskask/SKILL.md) | `/dskask <msg>` | Reasoning, math, algorithms |
+| [iFlow](skills/iask/SKILL.md) | `/iask <msg>` | Workflow automation, integrations |
+| [Kimi](skills/kask/SKILL.md) | `/kask <msg>` | Long documents, Chinese-language tasks |
+| [Qwen](skills/qask/SKILL.md) | `/qask <msg>` | Multilingual, general-purpose analysis |
+| [Droid](skills/dask/SKILL.md) | `/dask <msg>` | Mobile/Android development |
+| [Generic](skills/ask/SKILL.md) | `/ask <provider> <msg>` | Any provider by name |
+
+### Monitoring
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| [pend](skills/pend/SKILL.md) | `/pend <provider>` | Fetch latest reply from a provider |
+| [ping](skills/ping/SKILL.md) | `/ping <provider>` | Check provider connectivity |
+
+### Workflows
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| [all-plan](skills/all-plan/SKILL.md) | `/all-plan` | Multi-AI collaborative planning |
+| [stem-modeling](skills/stem-modeling/SKILL.md) | `/stem-modeling` | STEM academic modeling |
+| [ccb-launcher](skills/ccb-launcher/SKILL.md) | `/ccb-launcher` | CCB environment management |
+
+---
+
+## Templates
+
+Ready-to-use templates for common multi-AI workflows:
+
+| Template | Use Case |
+|----------|----------|
+| [parallel-review](templates/parallel-review.md) | Send code review to multiple providers in parallel, then synthesize |
+| [consensus-decision](templates/consensus-decision.md) | Get multiple AI opinions on a design/architecture decision |
+| [research-delegation](templates/research-delegation.md) | Delegate research tasks to specialized providers |
+
+---
+
+## Orchestration Patterns
+
+For advanced multi-AI coordination, see [orchestration/patterns.md](orchestration/patterns.md):
+
+| Pattern | When to Use |
 |---------|-------------|
-| **Async Delegation** | Send tasks to providers without blocking |
-| **9 AI Providers** | Claude, Codex, Gemini, OpenCode, DeepSeek, iFlow, Kimi, Qwen, Droid |
-| **Unified Commands** | Consistent `*ask` / `*ping` / `*pend` interface |
-| **Collaborative Planning** | Multi-AI planning with `all-plan` |
-| **STEM Modeling** | Distributed academic modeling |
-| **CCB Launcher** | Environment management and setup |
+| **Parallel Fan-Out** | Same task to N providers, synthesize results |
+| **Sequential Pipeline** | Chain providers: output of one feeds the next |
+| **Consensus Voting** | Multiple providers vote on a decision |
+| **Specialist Routing** | Route sub-tasks to the best-fit provider |
 
 ---
 
@@ -67,58 +111,22 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-ccb-skills.git
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/claude-ccb-skills/SKILL.md
-```
+# The toolkit auto-routes based on your request:
+"Review this code with Gemini and Codex"  --> parallel fan-out + parallel-review template
+"Get opinions on this architecture"       --> consensus-decision template
+"Ask DeepSeek to solve this algorithm"    --> /dskask
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `ask` | `/ask <provider> <msg>` | Generic async delegation |
-| `cask` | `/cask <msg>` | Delegate to Codex |
-| `gask` | `/gask <msg>` | Delegate to Gemini |
-| `oask` | `/oask <msg>` | Delegate to OpenCode |
-| `iask` | `/iask <msg>` | Delegate to iFlow |
-| `kask` | `/kask <msg>` | Delegate to Kimi |
-| `qask` | `/qask <msg>` | Delegate to Qwen |
-| `dskask` | `/dskask <msg>` | Delegate to DeepSeek |
-| `dask` | `/dask <msg>` | Delegate to Droid |
-| `ping` | `/ping <provider>` | Check provider connectivity |
-| `pend` | `/pend <provider>` | Fetch latest reply |
-| `ccb-launcher` | `/ccb-launcher` | CCB environment management |
-| `all-plan` | `/all-plan` | Multi-AI collaborative planning |
-| `stem-modeling` | `/stem-modeling` | STEM academic modeling |
-
----
-
-## Usage
-
-```bash
-# Delegate to Gemini
-/gask "analyze this code"
-
-# Delegate to Codex
+# Direct provider delegation:
+/gask "analyze this codebase"
 /cask "review this PR"
 
-# Check provider status
-/ping codex
-
-# Fetch latest reply
+# Check results:
 /pend gemini
+/ping codex
 ```
-
----
-
-## Requirements
-
-- Claude Code CLI
-- WezTerm or tmux for multi-session management
-- Respective AI CLI tools installed (codex, gemini-cli, etc.)
 
 ---
 
@@ -126,26 +134,32 @@ ls ~/.claude/skills/claude-ccb-skills/SKILL.md
 
 ### 概述
 
-**Claude CCB Skills** 是一个多 AI 协作工具集，允许 Claude Code 将任务委托给在独立终端会话中运行的其他 AI 助手。
+**多 AI 协调工具集** 让 Claude Code 能够将任务委托给 9 个独立终端会话中运行的 AI 服务商。除了简单委托外，还提供编排模式和模板，支持并行扇出、共识投票、顺序流水线和专家路由。
 
-### 包含的技能
+### 模块
 
-| 技能 | 命令 | 描述 |
-|------|------|------|
-| `ask` | `/ask <provider> <msg>` | 通用异步委托 |
-| `cask` | `/cask <msg>` | 委托给 Codex |
-| `gask` | `/gask <msg>` | 委托给 Gemini |
-| `oask` | `/oask <msg>` | 委托给 OpenCode |
-| `iask` | `/iask <msg>` | 委托给 iFlow |
-| `kask` | `/kask <msg>` | 委托给 Kimi |
-| `qask` | `/qask <msg>` | 委托给 Qwen |
-| `dskask` | `/dskask <msg>` | 委托给 DeepSeek |
-| `dask` | `/dask <msg>` | 委托给 Droid |
-| `ping` | `/ping <provider>` | 检查 provider 连接 |
-| `pend` | `/pend <provider>` | 获取最新回复 |
-| `ccb-launcher` | `/ccb-launcher` | CCB 环境管理 |
-| `all-plan` | `/all-plan` | 多 AI 协作规划 |
-| `stem-modeling` | `/stem-modeling` | STEM 学术建模 |
+| 类别 | 技能数 | 覆盖范围 |
+|------|--------|---------|
+| 委托 | 9 | Codex、Gemini、OpenCode、DeepSeek、iFlow、Kimi、Qwen、Droid、通用 |
+| 监控 | 2 | 获取回复 (pend)、连接检查 (ping) |
+| 工作流 | 3 | 多 AI 规划、STEM 建模、环境管理 |
+
+### 模板
+
+| 模板 | 用途 |
+|------|------|
+| parallel-review | 并行代码审查，多服务商同时审查后综合结果 |
+| consensus-decision | 多 AI 共识决策，获取多方意见后投票 |
+| research-delegation | 研究任务委托，按专长分配给最合适的服务商 |
+
+### 编排模式
+
+| 模式 | 适用场景 |
+|------|---------|
+| 并行扇出 | 同一任务发给多个服务商，综合结果 |
+| 顺序流水线 | 链式调用，前一个的输出作为下一个的输入 |
+| 共识投票 | 多个服务商投票决定 |
+| 专家路由 | 按子任务特点分配给最擅长的服务商 |
 
 ### 安装
 
@@ -154,31 +168,12 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-ccb-skills.git
 ```
 
-### 使用方法
-
-```bash
-# 委托给 Gemini
-/gask "分析这段代码"
-
-# 委托给 Codex
-/cask "审查这个 PR"
-
-# 检查 provider 状态
-/ping codex
-```
-
-### 依赖
-
-- Claude Code CLI
-- WezTerm 或 tmux（多会话管理）
-- 相应的 AI CLI 工具（codex、gemini-cli 等）
-
 ---
 
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## License
 

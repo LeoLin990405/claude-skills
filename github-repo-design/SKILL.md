@@ -1,156 +1,87 @@
 ---
-name: github-repo-design
-description: GitHub 仓库设计与 README 最佳实践指南，帮助创建专业的开源项目结构
+name: repo-toolkit
+description: Complete GitHub repository design toolkit - 15 modules, 4 templates. Covers repo setup, documentation, collaboration, quality, and advanced configuration.
+version: 2.0.0
 triggers:
   - github repo
   - repository design
   - readme design
-  - 仓库设计
-  - 项目结构
-  - 开源项目
+  - project structure
+  - open source project
   - profile readme
   - github profile
   - readme badge
   - readme template
+  - ci/cd
+  - github actions
+  - monorepo
+  - release checklist
+  - new repo
+  - repo setup
 ---
 
-# GitHub 仓库设计与 README 最佳实践
+# Repository Toolkit
 
-> 基于 100+ 优秀开源项目研究总结的最佳实践指南
+A complete GitHub repository design toolkit organized by project phase. Each module is a focused guide with best practices, patterns, and examples drawn from 100+ open source projects.
 
-## 使用场景
+## Routing Guide
 
-当用户需要以下帮助时使用此 skill：
-- 创建新的 GitHub 仓库
-- 设计项目文件结构
-- 编写 README 文件
-- 配置开源项目必备文件
-- 优化仓库可发现性
-- 设置 GitHub Profile README
+| User Intent | Phase | Modules | Quick Templates |
+|---|---|---|---|
+| New repo, file layout, .gitignore, base structure | Setup | [01-structure](modules/01-structure/), [03-config](modules/03-config/), [05-settings](modules/05-settings/) | [new-repo-checklist](templates/new-repo-checklist.md) |
+| README, docs site, i18n, FAQ, badges | Documentation | [02-readme](modules/02-readme/), [10-docs](modules/10-docs/), [14-i18n](modules/14-i18n/), [15-faq](modules/15-faq/) | [readme-template](templates/readme-template.md) |
+| Issue templates, PR templates, community, contributing | Collaboration | [04-templates](modules/04-templates/), [13-community](modules/13-community/) | — |
+| CI/CD, security, versioning, linting, code quality | Quality | [06-cicd](modules/06-cicd/), [08-security](modules/08-security/), [11-versioning](modules/11-versioning/), [12-quality](modules/12-quality/) | [ci-workflow-template](templates/ci-workflow-template.yml), [release-checklist](templates/release-checklist.md) |
+| GitHub Profile README, monorepo structure | Advanced | [07-profile](modules/07-profile/), [09-monorepo](modules/09-monorepo/) | — |
+| "I need a template" | — | Serve directly from [templates/](templates/) | — |
 
----
+## Quick Actions
 
-## 模块索引
+Common tasks with direct module + template links:
 
-本 skill 采用分包分级架构，按主题组织为独立模块：
+- **"Set up a new repo"** -> Load [01-structure](modules/01-structure/) + [03-config](modules/03-config/) + [05-settings](modules/05-settings/) + [new-repo-checklist](templates/new-repo-checklist.md)
+- **"Create a README"** -> Load [02-readme](modules/02-readme/) + [readme-template](templates/readme-template.md)
+- **"Add CI/CD"** -> Load [06-cicd](modules/06-cicd/) + [ci-workflow-template](templates/ci-workflow-template.yml)
+- **"Prepare a release"** -> Load [11-versioning](modules/11-versioning/) + [release-checklist](templates/release-checklist.md)
+- **"Set up issue templates"** -> Load [04-templates](modules/04-templates/)
+- **"Harden security"** -> Load [08-security](modules/08-security/)
+- **"Build a docs site"** -> Load [10-docs](modules/10-docs/)
+- **"Create a GitHub Profile"** -> Load [07-profile](modules/07-profile/)
+- **"Set up a monorepo"** -> Load [09-monorepo](modules/09-monorepo/)
+- **"Add internationalization"** -> Load [14-i18n](modules/14-i18n/)
 
-### 基础模块
+## Modules
 
-| 模块 | 说明 | 路径 |
-|------|------|------|
-| **01-structure** | 仓库核心文件结构 | `modules/01-structure/` |
-| **02-readme** | README 设计指南 | `modules/02-readme/` |
-| **03-config** | 核心配置文件 | `modules/03-config/` |
-| **04-templates** | Issue/PR 模板 | `modules/04-templates/` |
-| **05-settings** | 仓库设置优化 | `modules/05-settings/` |
+| # | Phase | Module | Scope |
+|---|-------|--------|-------|
+| 01 | Setup | **structure** | Recommended project directory layout, essential files |
+| 02 | Documentation | **readme** | README design, badges, shields.io, tools |
+| 03 | Setup | **config** | LICENSE, CONTRIBUTING, SECURITY, CODEOWNERS |
+| 04 | Collaboration | **templates** | Bug reports, feature requests, PR templates |
+| 05 | Setup | **settings** | Topics, social preview, branch protection |
+| 06 | Quality | **cicd** | GitHub Actions workflows, CI/CD pipelines |
+| 07 | Advanced | **profile** | GitHub Profile README |
+| 08 | Quality | **security** | Dependabot, CodeQL, secret scanning |
+| 09 | Advanced | **monorepo** | Monorepo structure and tooling |
+| 10 | Documentation | **docs** | Documentation site integration (Docusaurus, MkDocs) |
+| 11 | Quality | **versioning** | SemVer, Conventional Commits, changelogs |
+| 12 | Quality | **quality** | Linting, pre-commit hooks, EditorConfig |
+| 13 | Collaboration | **community** | Discussions, contributor recognition, sponsors |
+| 14 | Documentation | **i18n** | Multi-language README, internationalization |
+| 15 | Documentation | **faq** | Frequently asked questions |
 
-### 进阶模块
+## Recipes (Module Combinations)
 
-| 模块 | 说明 | 路径 |
-|------|------|------|
-| **06-cicd** | CI/CD 配置 | `modules/06-cicd/` |
-| **07-profile** | GitHub Profile README | `modules/07-profile/` |
-| **08-security** | 安全最佳实践 | `modules/08-security/` |
-| **09-monorepo** | Monorepo 结构 | `modules/09-monorepo/` |
-| **10-docs** | 文档网站集成 | `modules/10-docs/` |
+Pick the recipe that matches your project type:
 
-### 高级模块
+| Project Type | Modules | Templates |
+|---|---|---|
+| **Small utility / library** | 01 + 02 + 03 | new-repo-checklist, readme-template |
+| **Open source project** | 01-06 + 08 + 11-13 | All templates |
+| **Enterprise project** | 01-06 + 08 + 11 + 12 | ci-workflow-template, release-checklist |
+| **Documentation-heavy project** | 01-03 + 10 + 14 + 15 | readme-template |
+| **Monorepo** | 01-03 + 06 + 09 + 11 + 12 | ci-workflow-template, release-checklist |
 
-| 模块 | 说明 | 路径 |
-|------|------|------|
-| **11-versioning** | 版本管理策略 | `modules/11-versioning/` |
-| **12-quality** | 代码质量工具 | `modules/12-quality/` |
-| **13-community** | 社区建设 | `modules/13-community/` |
-| **14-i18n** | 国际化支持 | `modules/14-i18n/` |
-| **15-faq** | 常见问题 | `modules/15-faq/` |
+## Source
 
----
-
-## 快速参考
-
-### 新仓库检查清单
-
-- [ ] README.md 包含项目说明、安装、用法
-- [ ] 选择了合适的 LICENSE
-- [ ] 添加了 .gitignore
-- [ ] 配置了 Topics 标签
-- [ ] 设置了社交预览图
-- [ ] 创建了 Issue/PR 模板
-- [ ] 配置了分支保护规则
-- [ ] 设置了 CI/CD 工作流
-- [ ] 添加了 CONTRIBUTING.md（开源项目）
-- [ ] 添加了 SECURITY.md（安全敏感项目）
-
-### 推荐项目结构
-
-```
-project-name/
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   ├── CODEOWNERS
-│   └── workflows/
-├── docs/
-├── src/
-├── tests/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-└── .gitignore
-```
-
-### 常用许可证
-
-| 许可证 | 特点 | 适用场景 |
-|--------|------|----------|
-| **MIT** | 宽松，允许商用 | 大多数开源项目 |
-| **Apache 2.0** | 专利保护 | 企业级项目 |
-| **GPL-3.0** | 强制开源 | 保持开源的项目 |
-
----
-
-## 使用方式
-
-### 查看特定模块
-
-```
-请参考 modules/02-readme/ 了解 README 设计
-```
-
-### 按需组合
-
-根据项目需求，选择相关模块：
-
-- **小型工具库**: 01-structure + 02-readme + 03-config
-- **开源项目**: 全部基础模块 + 06-cicd + 08-security
-- **企业项目**: 基础模块 + 进阶模块 + 11-versioning + 12-quality
-- **社区项目**: 全部模块
-
----
-
-## 模块详情
-
-### 02-readme 模块结构
-
-```
-modules/02-readme/
-├── README.md      # README 设计指南
-├── badges.md      # 徽章配置
-└── tools.md       # 工具推荐
-```
-
-### 模块文件说明
-
-每个模块包含：
-- `README.md` - 模块主文档
-- 可选的子文档 - 详细主题
-
----
-
-## 版本信息
-
-- **版本**: 2.0.0
-- **架构**: 分包分级
-- **模块数**: 15
-- **更新日期**: 2024-01
+Best practices extracted from 100+ top open source repositories on GitHub.

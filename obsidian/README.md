@@ -1,23 +1,23 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
   <img src="https://img.shields.io/badge/Skills-3-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Obsidian-Note--Taking-7C3AED?style=for-the-badge" alt="Obsidian">
+  <img src="https://img.shields.io/badge/Templates-4-orange?style=for-the-badge" alt="Templates">
+  <img src="https://img.shields.io/badge/Obsidian-KM--Toolkit-7C3AED?style=for-the-badge" alt="Obsidian">
 </p>
 
-<h1 align="center">Claude Obsidian Skills</h1>
+<h1 align="center">Knowledge Management Toolkit</h1>
 
 <p align="center">
-  <strong>Obsidian Note-Taking Toolkit for Claude Code</strong>
+  <strong>Complete Obsidian Knowledge Management Toolkit for Claude Code</strong>
   <br>
-  <em>Obsidian Flavored Markdown, Bases database views, and JSON Canvas editing</em>
+  <em>3 format skills, 4 workflow templates — covering the full knowledge lifecycle</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
   <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-syntax">Syntax</a>
+  <a href="#-templates">Templates</a> •
+  <a href="#-workflow">Workflow</a> •
+  <a href="#-quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -32,29 +32,56 @@
 
 ## Overview
 
-**Claude Obsidian Skills** enables Claude Code to work with Obsidian-specific formats, including wikilinks, callouts, properties, and the new Bases feature.
+**Knowledge Management Toolkit** is a complete Obsidian toolkit organized by the knowledge lifecycle. It combines three format reference skills with workflow templates covering capture, organization, connection, and visualization.
 
-### Why Obsidian Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Standard Markdown limitations | **Obsidian Flavored Markdown** with wikilinks, embeds |
-| No database views | **Bases** for database-like note organization |
-| Text-only notes | **JSON Canvas** for visual note connections |
-| Manual formatting | **Auto-formatting** with Obsidian syntax |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| 3 standalone format references | **3 skills + workflow routing layer** |
+| No templates | **4 ready-to-use templates** |
+| Format-organized | **Lifecycle-organized** (capture → organize → connect → visualize) |
+| Manual skill selection | **Auto-routing** by user intent |
 
 ---
 
-## Features
+## Skills
 
-| Feature | Description |
-|---------|-------------|
-| **Wikilinks** | `[[note]]` and `[[note\|alias]]` syntax |
-| **Embeds** | `![[image]]` and `![[note]]` transclusion |
-| **Callouts** | `> [!note]`, `> [!warning]`, etc. |
-| **Properties** | YAML frontmatter with tags, aliases |
-| **Bases** | Database views with filters, sorts, formulas |
-| **Canvas** | Visual node connections and grouping |
+| # | Skill | What It Covers |
+|---|-------|---------------|
+| 1 | [obsidian-markdown](skills/obsidian-markdown/SKILL.md) | Wikilinks, embeds, callouts, properties, Obsidian Flavored Markdown |
+| 2 | [obsidian-bases](skills/obsidian-bases/SKILL.md) | Database views, filters, sorts, formulas, aggregations |
+| 3 | [json-canvas](skills/json-canvas/SKILL.md) | JSON Canvas spec, nodes, edges, groups, spatial layout |
+
+---
+
+## Templates
+
+Ready-to-use templates for common knowledge management tasks:
+
+| Template | Format | Use Case |
+|----------|--------|----------|
+| [daily-note](templates/daily-note.md) | Markdown | Daily journal with tasks, notes, and reflections |
+| [project-tracker](templates/project-tracker.base) | Bases | Track projects by status, priority, due date, tags |
+| [research-canvas](templates/research-canvas.canvas) | Canvas | Map research from topic to findings |
+| [meeting-note](templates/meeting-note.md) | Markdown | Meeting notes with attendees, decisions, action items |
+
+---
+
+## Workflow
+
+The knowledge lifecycle in Obsidian:
+
+```
+Capture → Organize → Connect → Visualize
+```
+
+| Phase | Activity | Skills & Templates |
+|---|---|---|
+| **Capture** | Daily notes, meeting notes, fleeting ideas | obsidian-markdown + daily-note, meeting-note |
+| **Organize** | Properties, tags, database views, status tracking | obsidian-bases + project-tracker |
+| **Connect** | Wikilinks, backlinks, block references, transclusion | obsidian-markdown |
+| **Visualize** | Canvas maps, spatial layouts, node grouping | json-canvas + research-canvas |
 
 ---
 
@@ -64,83 +91,22 @@
 
 ```bash
 cd ~/.claude/skills
-git clone https://github.com/LeoLin990405/claude-obsidian-skills.git
+git clone https://github.com/LeoLin990405/claude-skills.git
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/claude-obsidian-skills/SKILL.md
-```
+# The toolkit auto-routes based on your request:
+"Create a daily note for today"        → obsidian-markdown + daily-note
+"Set up a project tracker"             → obsidian-bases + project-tracker
+"Map out my research on X"             → json-canvas + research-canvas
+"Take notes for this meeting"          → obsidian-markdown + meeting-note
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `obsidian-markdown` | `/obsidian-markdown` | Obsidian Flavored Markdown |
-| `obsidian-bases` | `/obsidian-bases` | Database views with filters |
-| `json-canvas` | `/json-canvas` | Visual canvas editing |
-
----
-
-## Syntax
-
-### Wikilinks
-
-```markdown
-[[Note Name]]           # Basic link
-[[Note Name|Display]]   # Aliased link
-[[Note Name#Heading]]   # Heading link
-[[Note Name#^block-id]] # Block link
-```
-
-### Embeds
-
-```markdown
-![[image.png]]          # Image embed
-![[note]]               # Note transclusion
-![[note#heading]]       # Section embed
-```
-
-### Callouts
-
-```markdown
-> [!note] Title
-> Content here
-
-> [!warning] Warning
-> Important message
-
-> [!tip]+ Collapsible
-> Hidden by default
-```
-
-### Properties (Frontmatter)
-
-```yaml
----
-title: My Note
-tags: [tag1, tag2]
-aliases: [alias1]
-created: 2024-01-01
----
-```
-
----
-
-## Usage
-
-```bash
-# Create Obsidian-style notes
-/obsidian-markdown
-
-# Work with Bases database views
-/obsidian-bases
-
-# Edit canvas files
-/json-canvas
+# Or access skills directly:
+"Use obsidian-markdown"                → obsidian-markdown
+"Show me how Bases work"               → obsidian-bases
+"Help me edit a canvas file"           → json-canvas
 ```
 
 ---
@@ -149,61 +115,36 @@ created: 2024-01-01
 
 ### 概述
 
-**Claude Obsidian Skills** 使 Claude Code 能够处理 Obsidian 特有格式，包括 wikilinks、callouts、properties 和新的 Bases 功能。
+**知识管理工具集** 是一个完整的 Obsidian 知识管理工具集，按知识生命周期组织。将三个格式参考技能与工作流模板相结合，覆盖捕获、组织、连接和可视化全流程。
 
-### 包含的技能
+### 技能
 
-| 技能 | 命令 | 描述 |
+| 技能 | 覆盖范围 |
+|------|---------|
+| obsidian-markdown | Wikilinks、嵌入、Callouts、属性、Obsidian 风格 Markdown |
+| obsidian-bases | 数据库视图、筛选、排序、公式、聚合 |
+| json-canvas | JSON Canvas 规范、节点、连线、分组、空间布局 |
+
+### 模板
+
+| 模板 | 格式 | 用途 |
 |------|------|------|
-| `obsidian-markdown` | `/obsidian-markdown` | Obsidian 风格 Markdown |
-| `obsidian-bases` | `/obsidian-bases` | 数据库视图 |
-| `json-canvas` | `/json-canvas` | 可视化画布编辑 |
+| daily-note | Markdown | 每日笔记：任务、记录、反思 |
+| project-tracker | Bases | 项目跟踪：状态、优先级、截止日期 |
+| research-canvas | Canvas | 研究地图：主题 → 问题 → 来源 → 发现 |
+| meeting-note | Markdown | 会议记录：参会者、讨论、决策、行动 |
 
-### 语法示例
+### 工作流
 
-#### Wikilinks
-
-```markdown
-[[笔记名称]]            # 基本链接
-[[笔记名称|显示文本]]   # 别名链接
-[[笔记名称#标题]]       # 标题链接
 ```
-
-#### 嵌入
-
-```markdown
-![[图片.png]]           # 图片嵌入
-![[笔记]]               # 笔记嵌入
-```
-
-#### Callouts
-
-```markdown
-> [!note] 标题
-> 内容
-
-> [!warning] 警告
-> 重要信息
+捕获 → 组织 → 连接 → 可视化
 ```
 
 ### 安装
 
 ```bash
 cd ~/.claude/skills
-git clone https://github.com/LeoLin990405/claude-obsidian-skills.git
-```
-
-### 使用方法
-
-```bash
-# 创建 Obsidian 风格笔记
-/obsidian-markdown
-
-# 使用 Bases 数据库视图
-/obsidian-bases
-
-# 编辑 canvas 文件
-/json-canvas
+git clone https://github.com/LeoLin990405/claude-skills.git
 ```
 
 ---
@@ -211,7 +152,7 @@ git clone https://github.com/LeoLin990405/claude-obsidian-skills.git
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## License
 
