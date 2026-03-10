@@ -1,23 +1,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Claude%20Code-Skill-blue?style=for-the-badge" alt="Claude Code Skill">
-  <img src="https://img.shields.io/badge/Skills-86-green?style=for-the-badge" alt="Skills">
-  <img src="https://img.shields.io/badge/Product-Management-orange?style=for-the-badge" alt="Product Management">
+  <img src="https://img.shields.io/badge/Skills-88-green?style=for-the-badge" alt="Skills">
+  <img src="https://img.shields.io/badge/PM-Toolkit-orange?style=for-the-badge" alt="PM Toolkit">
 </p>
 
-<h1 align="center">Claude Lenny Skills</h1>
+<h1 align="center">PM Toolkit</h1>
 
 <p align="center">
-  <strong>Lenny's Podcast Product Management Skills for Claude Code</strong>
+  <strong>Complete Product Management Toolkit for Claude Code</strong>
   <br>
-  <em>86 actionable PM skills across hiring, strategy, growth, leadership, and more</em>
+  <em>8 workflow modules, 88 skills, 10 executable templates — covering the full PM lifecycle</em>
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-skills">Skills</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-domains">Domains</a>
+  <a href="#-modules">Modules</a> •
+  <a href="#-templates">Templates</a> •
+  <a href="#-playbooks">Playbooks</a> •
+  <a href="#-quick-start">Quick Start</a>
 </p>
 
 <p align="center">
@@ -32,27 +31,68 @@
 
 ## Overview
 
-**Claude Lenny Skills** brings the wisdom from Lenny's Podcast into Claude Code, providing structured frameworks and actionable guidance for product managers.
+**PM Toolkit** is a complete product management toolkit organized by workflow phase. It evolved from 86 Lenny's Podcast skills into 8 actionable workflow modules with executable templates, frameworks, and checklists.
 
-### Why Lenny Skills?
+### What Changed (v2.0)
 
-| Challenge | Solution |
-|-----------|----------|
-| Scattered PM knowledge | **86 structured skills** organized by domain |
-| Generic advice | **Actionable frameworks** from top PMs |
-| Role-specific needs | **Playbooks** for founders, PMs, managers |
-| Learning curve | **Progressive levels** from basic to advanced |
+| Before (v1) | After (v2) |
+|-------------|------------|
+| 16 knowledge categories | **8 workflow modules** |
+| Advice-level bullet points | **Actionable frameworks with anti-patterns** |
+| No templates | **10 executable templates** |
+| Domain-organized | **Lifecycle-organized** |
 
 ---
 
-## Features
+## Modules
 
-| Feature | Description |
-|---------|-------------|
-| **86 PM Skills** | Comprehensive coverage of product management |
-| **16 Skill Categories** | Organized by domain and function |
-| **Role Playbooks** | Curated combinations for specific roles |
-| **Actionable Frameworks** | Ready-to-use templates and processes |
+| # | Module | Skills | What It Covers |
+|---|--------|--------|---------------|
+| 1 | [pm-discovery](skills/pm-discovery/SKILL.md) | 7 | Problem definition, user research, competitive analysis, JTBD |
+| 2 | [pm-strategy](skills/pm-strategy/SKILL.md) | 8 | Vision, north star, OKRs, roadmap, PRD, prioritization |
+| 3 | [pm-execution](skills/pm-execution/SKILL.md) | 10 | Shipping, timelines, decisions, meetings, retros |
+| 4 | [pm-growth](skills/pm-growth/SKILL.md) | 8 | PMF, growth loops, pricing, retention, experiments |
+| 5 | [pm-analytics](skills/pm-analytics/SKILL.md) | 8 | Metrics, financial modeling, data-driven decisions, platform |
+| 6 | [pm-communication](skills/pm-communication/SKILL.md) | 9 | Presentations, writing, stakeholders, brand, content |
+| 7 | [pm-team](skills/pm-team/SKILL.md) | 22 | Hiring, 1:1s, culture, delegation, sales team |
+| 8 | [pm-leadership](skills/pm-leadership/SKILL.md) | 16 | Coaching, product taste, AI strategy, org design, career |
+
+---
+
+## Templates
+
+Ready-to-use templates for common PM tasks:
+
+| Template | Use Case |
+|----------|----------|
+| [prd-template](templates/prd-template.md) | Write a product requirements document |
+| [okr-template](templates/okr-template.md) | Set quarterly OKRs |
+| [user-interview-script](templates/user-interview-script.md) | Conduct user research interviews |
+| [competitive-analysis](templates/competitive-analysis.md) | Analyze competitive landscape |
+| [launch-checklist](templates/launch-checklist.md) | Plan and execute a product launch |
+| [retro-template](templates/retro-template.md) | Run retrospectives and post-mortems |
+| [metrics-dashboard](templates/metrics-dashboard.md) | Design a metrics dashboard |
+| [one-on-one-template](templates/one-on-one-template.md) | Run effective 1:1 meetings |
+| [decision-doc-template](templates/decision-doc-template.md) | Make and document decisions |
+| [financial-model-spec](templates/financial-model-spec.md) | Build financial models and unit economics |
+
+---
+
+## Playbooks
+
+Role-based workflow sequences — see [pm-playbooks](skills/pm-playbooks/SKILL.md):
+
+| Playbook | Workflow Sequence |
+|----------|------------------|
+| **Startup Founder** | discovery → strategy → execution → growth → team → leadership |
+| **Product Manager** | discovery → strategy → execution → communication → leadership |
+| **First-Time Manager** | team → communication → execution → leadership |
+| **Growth Leader** | growth → discovery → analytics → communication → leadership |
+| **Engineering Manager** | execution → analytics → team → communication |
+| **Sales Leader** | team → communication → strategy → growth |
+| **AI Builder** | leadership → strategy → discovery → growth → execution |
+| **Executive** | communication → leadership → strategy → execution |
+| **Career Growth** | leadership → communication → team |
 
 ---
 
@@ -65,68 +105,19 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-lenny-skills.git
 ```
 
-### Verify Installation
+### Usage
 
 ```bash
-ls ~/.claude/skills/claude-lenny-skills/SKILL.md
-```
+# The toolkit auto-routes based on your request:
+"Help me write a PRD"              → pm-strategy + prd-template
+"Prepare user interviews"          → pm-discovery + interview-script
+"Set OKRs for Q2"                  → pm-strategy + okr-template
+"Run a retro"                      → pm-execution + retro-template
+"Build a financial model"          → pm-analytics + financial-model-spec
 
----
-
-## Skills
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| `lenny-skills` | `/lenny-skills` | Master index of all 86 PM skills |
-| `lenny-playbooks` | `/lenny-playbooks` | Role-based skill combinations |
-| `lenny-strategy` | `/lenny-strategy` | Vision, roadmaps, OKRs, PRDs |
-| `lenny-execution` | `/lenny-execution` | Delivery, timelines, collaboration |
-| `lenny-decision` | `/lenny-decision` | Decision processes, trade-offs |
-| `lenny-growth` | `/lenny-growth` | PMF, growth loops, pricing, retention |
-| `lenny-research` | `/lenny-research` | User research, interviews, surveys |
-| `lenny-marketing` | `/lenny-marketing` | Positioning, storytelling, launches |
-| `lenny-hiring` | `/lenny-hiring` | Job descriptions, interviews, onboarding |
-| `lenny-sales` | `/lenny-sales` | Founder sales, sales teams, BD |
-| `lenny-startup` | `/lenny-startup` | Team rituals, fundraising, pivoting |
-| `lenny-design` | `/lenny-design` | Design systems, reviews, engineering |
-| `lenny-technology` | `/lenny-technology` | AI strategy, LLMs, platform, tech debt |
-| `lenny-communication` | `/lenny-communication` | Presentations, writing, alignment |
-| `lenny-career` | `/lenny-career` | Ideation, imposter syndrome, productivity |
-| `lenny-advanced` | `/lenny-advanced` | Product taste, systems thinking |
-
----
-
-## Domains
-
-| Domain | Skills | Focus Areas |
-|--------|--------|-------------|
-| Strategy | 12 | Vision, roadmap, OKRs, PRDs, prioritization |
-| Execution | 8 | Shipping, timelines, cross-functional work |
-| Growth | 10 | PMF, loops, pricing, retention, metrics |
-| Research | 6 | Interviews, surveys, usability, feedback |
-| Marketing | 8 | Positioning, storytelling, launch, content |
-| Hiring | 7 | JDs, interviews, onboarding, culture |
-| Sales | 5 | Founder sales, teams, enterprise, BD |
-| Leadership | 10 | Communication, coaching, decision-making |
-| Technology | 6 | AI, LLMs, platform, tech debt |
-| Career | 8 | Growth, productivity, imposter syndrome |
-
----
-
-## Usage
-
-```bash
-# Browse all 86 skills
-/lenny-skills
-
-# Get role-based recommendations
-/lenny-playbooks
-
-# Access growth-specific skills
-/lenny-growth
-
-# Learn about product strategy
-/lenny-strategy
+# Or access modules directly:
+"Use the PM growth module"         → pm-growth
+"Show me the founder playbook"     → pm-playbooks
 ```
 
 ---
@@ -135,28 +126,20 @@ ls ~/.claude/skills/claude-lenny-skills/SKILL.md
 
 ### 概述
 
-**Claude Lenny Skills** 将 Lenny's Podcast 的智慧引入 Claude Code，为产品经理提供结构化框架和可操作的指导。
+**PM Toolkit** 是一个完整的产品管理工具集，按工作流阶段组织。从 86 个 Lenny's Podcast 技能进化为 8 个可执行的工作流模块，包含模板、框架和检查清单。
 
-### 包含的技能
+### 模块
 
-| 技能 | 命令 | 描述 |
-|------|------|------|
-| `lenny-skills` | `/lenny-skills` | 86 个 PM 技能总览 |
-| `lenny-playbooks` | `/lenny-playbooks` | 角色组合方案 |
-| `lenny-strategy` | `/lenny-strategy` | 愿景、路线图、OKR、PRD |
-| `lenny-execution` | `/lenny-execution` | 交付、时间线、跨职能协作 |
-| `lenny-decision` | `/lenny-decision` | 决策流程、权衡 |
-| `lenny-growth` | `/lenny-growth` | PMF、增长循环、定价、留存 |
-| `lenny-research` | `/lenny-research` | 用户研究、访谈、调研 |
-| `lenny-marketing` | `/lenny-marketing` | 定位、故事、发布、内容 |
-| `lenny-hiring` | `/lenny-hiring` | JD、面试、入职、文化 |
-| `lenny-sales` | `/lenny-sales` | 创始人销售、销售团队、BD |
-| `lenny-startup` | `/lenny-startup` | 团队仪式、融资、转型 |
-| `lenny-design` | `/lenny-design` | 设计系统、评审、工程文化 |
-| `lenny-technology` | `/lenny-technology` | AI 策略、LLM、平台、技术债 |
-| `lenny-communication` | `/lenny-communication` | 演示、写作、对齐 |
-| `lenny-career` | `/lenny-career` | 创意、冒充者综合症、生产力 |
-| `lenny-advanced` | `/lenny-advanced` | 产品品味、系统思维 |
+| 模块 | 技能数 | 覆盖范围 |
+|------|--------|---------|
+| pm-discovery | 7 | 问题定义、用户研究、竞品分析 |
+| pm-strategy | 8 | 愿景、北极星指标、OKR、路线图、PRD |
+| pm-execution | 10 | 发布、时间线、决策、会议、复盘 |
+| pm-growth | 8 | PMF、增长飞轮、定价、留存、实验 |
+| pm-analytics | 8 | 指标、财务建模、数据驱动决策 |
+| pm-communication | 9 | 演示、写作、利益相关者、品牌 |
+| pm-team | 22 | 招聘、1:1、文化、委派、销售团队 |
+| pm-leadership | 16 | 教练、产品品味、AI 战略、组织设计 |
 
 ### 安装
 
@@ -165,25 +148,12 @@ cd ~/.claude/skills
 git clone https://github.com/LeoLin990405/claude-lenny-skills.git
 ```
 
-### 使用方法
-
-```bash
-# 浏览全部 86 个技能
-/lenny-skills
-
-# 获取角色推荐方案
-/lenny-playbooks
-
-# 访问增长相关技能
-/lenny-growth
-```
-
 ---
 
 ## Contributors
 
 - **Leo** ([@LeoLin990405](https://github.com/LeoLin990405)) - Project Lead
-- **Claude** (Anthropic Claude Opus 4.5) - Content Generation
+- **Claude** (Anthropic Claude) - Content Generation
 
 ## Acknowledgements
 
