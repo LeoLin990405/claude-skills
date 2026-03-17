@@ -1,0 +1,64 @@
+name: Bug Report
+description: Report a bug or issue with a skill or toolkit
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: toolkit
+    attributes:
+      label: Toolkit
+      description: Which toolkit is affected?
+      options:
+        - PM Toolkit (lenny)
+        - Design Toolkit (design)
+        - Document Toolkit (office)
+        - R Analytics Toolkit (r-analytics)
+        - Knowledge Toolkit (obsidian)
+        - Repository Toolkit (github-repo-design)
+        - Developer Toolkit (utility)
+        - Coordination Toolkit (ccb)
+        - Other / Multiple
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Skill / Module
+      description: Which specific skill or module? (e.g., pm-strategy, pdf, mcp-builder)
+      placeholder: e.g., pm-strategy
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what went wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Open Claude Code
+        2. Ask "..."
+        3. Observe incorrect output
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other information (screenshots, logs, environment details).
