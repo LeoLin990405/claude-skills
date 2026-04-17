@@ -1,5 +1,11 @@
 # Changelog
 
+Archived note:
+
+- `claude-skills` is now a historical umbrella repo.
+- Active changes moved to `LeoLin990405/claude-code-skills` and `LeoLin990405/r-analytics-skill`.
+- Entries below are retained only as historical release notes.
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
