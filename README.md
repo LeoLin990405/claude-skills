@@ -1,6 +1,6 @@
 # Claude Skills
 
-This repository is now a historical umbrella repo and should be treated as archived documentation plus historical content.
+This repository is public and unarchived. It is kept as a maintenance reference for the former umbrella toolkit layout.
 
 The canonical active locations are:
 
@@ -20,8 +20,6 @@ The canonical active locations are:
 - `https://github.com/LeoLin990405/claude-code-skills`
 - `https://github.com/LeoLin990405/r-analytics-skill`
 
-## Status
+## Maintenance
 
-- This repo is no longer the install target for active usage.
-- Historical content remains in place for reference.
-- New fixes, routing updates, and active skill evolution should happen in the canonical repos above.
+This repo is no longer the preferred install target for active usage, but it remains open for historical source context, issue triage, and small compatibility fixes. New fixes, routing updates, and active skill evolution should happen in the canonical repos above.
